@@ -26,3 +26,11 @@ git status
 ssh-keygen -t rsa -b 4096 -C "matheo.lucas1204@gmail.com"
 git add .
 cd var/www/html/Tableaux
+git init
+git log
+cd ..
+ce html
+cd  html
+cd  /var/www/html
+git add .
+git commit -m "4Tableau"
