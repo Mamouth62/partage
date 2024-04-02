@@ -1,6 +1,6 @@
 <fieldset>
 <legend>Formulaire </legend>
-<form method="POST" action="index.php?page=recupInscription.php">
+<form method="POST" action="index.php?page=recupForm">
 <p>
 <label>Nom: </label>
 <input type="text" name="nom">
@@ -17,7 +17,7 @@
 <label>Commentaire: </label>
 <input type="text" name="commentaire">
 </p>
-<input type="submit" value="Inscription" name="btInscription"/>
+<input type="submit" value="Test" name="btForm"/>
 </p>
 </form>
 </fieldset>
