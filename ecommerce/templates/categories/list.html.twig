@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+	{{ category.name }}
+{% endblock %}
+
+{% block body %}
+	<main class"container">
+		<section class="row">
+			<div class="col-12">
+				<h1>Liste des produits de
+					{{ category.name }}</h1>
+			</div>
+			{% for product in category.products %}
+			<br>
+				<div class="row">
+					<div class="col-3 mb-3">
+						<div class="card">
+						<img class="card-img-top" src="image/{{product.image}}">
+						</div>
+						<h2 class="card-title"> {{product.name}}</h2>
+						{# <p class= "card-text">{{product.description}}</p> #}
+						<a href="{{path('products_details', {"slug": product.slug})}}" class"btn btn-primary">Voir les détails</a>
+					</div>
+					<div class="col-3 md-3">
+						<div class="card"></div>
+					</div>
+					<div class="col-3 md-3">
+						<div class="card"></div>
+					</div>
+					<div class="col-3 md-3">
+						<div class="card"></div>
+					</div>
+				</div>
+
+
+				{# <div class="col-3">
+													<article class="card h-100 ">
+														<div class="card-body">
+														<h2 class="card-title"> {{product.name}}</h2>
+														<p class= "card-text">{{product.description}}</p>
+														<a href="#" class"btn btn-primary">Voir les détails</a> #}
+
+			{% endfor %}
+		</section>
+	</main>
+{% endblock %}
