@@ -1,0 +1,101 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wancourt -
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<style>
+		body {
+			background-color: #f8f9fa;
+			color: #343a40;
+			font-family: 'Arial', sans-serif;
+		}
+		.text-center img {
+			max-width: 100%;
+			height: auto;
+			display: block;
+			margin: 0 auto;
+		}
+	</style>
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-5">
+		<h1 class="mb-4">Salle des fêtes</h1>
+		<h5>La salle des fêtes de Wancourt vous accueille pour vos réceptions, mariages, baptêmes, anniversaires :<br><br>
+			une salle principale de 193 m² (capacité 120 places assises ou 150 personnes debouts)<br>
+			une salle annexe de 24 m²<br>
+			une cuisine.<br><br></h5>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 text-center">
+					{% set img1 = 'img/salle_fete.jpg' %}
+					<img src="{{ asset(img1) }}" class="img-fluid" alt="Description de l'image 1">
+				</div>
+				<div class="col-md-6 text-center">
+					{% set img2 = 'img/panoramique.jpg' %}
+					<img src="{{ asset(img2) }}" class="img-fluid" alt="Description de l'image 2">
+					<br><h4>Panoramique</h4>
+				</div>
+			</div>
+		</div><br>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 text-center">
+					{% set img3 = 'img/scene.jpg' %}
+					<img src="{{ asset(img3) }}" class="img-fluid" alt="Description de l'image 1">
+					<br><h4>Scène</h4>
+				</div>
+				<div class="col-md-6 text-center">
+					{% set img4 = 'img/bar.jpg' %}
+					<img src="{{ asset(img4) }}" class="img-fluid" alt="Description de l'image 2">
+					<br><h4>Bar</h4>
+				</div>
+			</div>
+		</div><br>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 text-center">
+					{% set img5 = 'img/cuisine.jpg' %}
+					<img src="{{ asset(img4) }}" class="img-fluid" alt="Description de l'image 1">
+					<br><h4>Cuisine</h4>
+				</div>
+				<div class="col-md-6 text-center">
+					{% set img6 = 'img/laverie.jpg' %}
+					<img src="{{ asset(img5) }}" class="img-fluid" alt="Description de l'image 2">
+					<br><h4>Laverie</h4>
+				</div>
+			</div>
+			<h5>Tarifs de location (à titre indicatif)<br><br>
+			Pour les Wancourtois :<br><br>	
+			150€ la journée,<br>
+			220€ le Week-end<br>
+			60€ l'après-midi uniquement <br><br>
+			Pour les extérieurs :<br><br>
+			380€ la journée,<br>
+			560€ le Week-end,<br>
+			140€ le lunch.<br><br>
+			Frais divers :<br><br>
+			Vaisselle couvert complet, 0,80€ par personne<br>
+			Verres seuls : 0,08€ le verre<br>
+			Electricité : 0,25€ par KWH<br>
+			Nettoyage : 15€ de l'heure<br>
+			Caution : 500€<br>
+			Frais de casse et de réparation déterminés par la mairie.<br><br>
+		    Etablissement de deux cautions une pour la salle et l'autre pour le dépassement du volume sonore.<br><br><br>
+			Equipements<br><br>
+		    Salle principale  (193 m²) avec bar<br>
+			Salle annexe, cloison amovible (24 m²)<br>
+			Estrade dans la salle principale (10,5 m²)<br>
+			Cuisine : four électrique avec plaques de gaz, micro-onde,<br>
+			               3 frigos, table inox, étuve et plonge congélateur bahut de 180l..<br>
+			Arrière-cuisine : lave-vaisselle<br>
+			Vestiaire, sanitaires, hall<br>
+			Pièce de rangement (tables et chaises)<br>
+			Dimensions des tables : 1,20 m * 0,80 m<br>
+			Réservation en Mairie</h5>
+            <div class="container mt-5">
+				<a href="{{ path('app_location_des_salles') }}" class="btn btn-dark-blue mb-4">Retour à la Page Location de Salle</a>
+			</div>
+		{% endblock %}

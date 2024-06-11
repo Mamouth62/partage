@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %} 
+
+{% block title %}Wancourt Journal -
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-5">
+		<h1 class="mb-4">Journal</h1>
+		<p class="mb-4">Cliquez sur l'article de votre choix pour lire le résumé complet.</p>
+		<div class="table-responsive">
+			<table class="table table-bordered">
+				<tbody>
+					<tr>
+						<td class="article-summary">
+							<h2 class="h4">Résultats des élections européennes 2024</h2>
+							<p>Ceci est un résumé de l'article 1.</p>
+							{% set img = 'img/resultats_europeennes.jpg' %}
+								<img src="{{ asset(img) }}" alt="Image article 1" width="100">
+							</div>
+							<br><a href="{{path('app_election2024')}}" class="btn btn-info">Lire</a>
+						</td>
+						<td class="article-summary">
+							<h2 class="h4">COURSE CYCLISTE LE 16 MAI</h2>
+							<p>Ceci est un résumé de l'article 2.</p><br><br><br><br>
+							<a href="#" class="btn btn-info">Lire</a>
+						</td>
+						<td class="article-summary">
+							<h2 class="h4">1 JUIN BROCANTE NOUVEAU TRACE</h2>
+							<p>Ceci est un résumé de l'article 3.</p>
+							{% set img3 = 'img/brocante_page.PNG' %}
+								<img src="{{ asset(img3) }}" alt="Image article 1" width="100">
+							</div><br>
+							<a href="{{path('app_brocante')}}" class="btn btn-info">Lire</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="article-summary">
+							<h2 class="h4">LE 6 JUIN DERNIER JOUR POUR LES IMPOTS REVENU</h2>
+							<p>Ceci est un résumé de l'article 4.</p>
+							{% set img4 = 'img/IMPOT_2023_2024.jpg' %}
+								<img src="{{ asset(img4) }}" alt="Image article 1" width="100">
+							</div><br>
+							<a href="{{ path('app_impot') }}" class="btn btn-info">Lire</a>
+						</td>
+						<td class="article-summary">
+							<h2 class="h4">LE 16 JUIN MARCHE ET VTT</h2>
+							<p>Ceci est un résumé de l'article 5.</p>
+							{% set img5 = 'img/vtt.jpg' %}
+								<img src="{{ asset(img5) }}" alt="Image article 1" width="100">
+							</div><br>
+							<a href="{{ path('app_marche') }}" class="btn btn-info">Lire</a>
+						</td>
+						<td class="article-summary">
+							<h2 class="h4">13-14-15 JUILLET DUCASSE</h2>
+							<p>Ceci est un résumé de l'article 6.</p>
+							<a href="article6.html" class="btn btn-info">Lire</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="container mt-5">
+		<a href="{{ path('app_base') }}" class="btn btn-dark-blue mb-4">Retour à la Page Principale</a>
+	</div>
+{% endblock %}

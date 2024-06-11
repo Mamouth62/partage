@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wancourt Mairie -
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-5">
+		<h1 class="mb-4">ARRETES COMMUNAUX</h1>
+		<p class="mb-4">Cliquez sur l'article de votre choix pour lire le résumé complet.</p>
+		<div class="table-responsive">
+			<table class="table table-bordered">
+				<tbody>
+					<tr>
+						<td class="article-summary">
+							<h2 class="h4">FEUX DE VEGETAUX POTAGER</h2>
+							<p>Ceci est un résumé de l'article 1.</p>
+							<a href="{{ path('app_feux_vegetaux_potager') }}" class="btn btn-info">Voir</a>
+						</td>
+						<td class="article-summary">
+							<h2 class="h4">BRUITS DE VOISINAGE</h2>
+							<p>Ceci est un résumé de l'article 2.</p>
+							<a href="{{ path('app_bruits_voisinages') }}" class="btn btn-info">Voir</a>
+						</td>
+						<td class="article-summary">
+							<h2 class="h4">FEUX ARTIFICE PRIVE</h2>
+							<p>Ceci est un résumé de l'article 3.</p>
+							<a href="{{ path('app_feux_artifices') }}" class="btn btn-info">Voir</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="article-summary">
+							<h2 class="h4">DEJECTION ANIMALE</h2>
+							<p>Ceci est un résumé de l'article 4.</p>
+							<a href="{{ path('app_dejection_animale') }}" class="btn btn-info">Voir</a>
+						</td>
+						<td class="article-summary">
+							<h2 class="h4">COURSE 4 JOURS DUNKERQUE</h2>
+							<p>Ceci est un résumé de l'article 5.</p>
+							<a href="{{ path('app_course_dunkerque') }}" class="btn btn-info">Voir</a>
+						</td>
+						<td class="article-summary">
+							<h2 class="h4">DEMARCHAGE A DOMICILE</h2>
+							<p>Ceci est un résumé de l'article 6.</p>
+							<a href="{{ path('app_demarchage_domicile') }}" class="btn btn-info">Voir</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="container mt-5">
+		<a href="{{ path('app_mairie') }}" class="btn btn-dark-blue mb-4">Retour à la Mairie</a>
+	</div>
+{% endblock %}

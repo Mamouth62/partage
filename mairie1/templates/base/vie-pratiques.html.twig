@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wancourt Vie Pratique -
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-5">
+		<h1 class="mb-4">Vie Pratique</h1>
+		<p class="mb-4">Cliquez sur l'article de votre choix pour lire le résumé complet.</p>
+		<div class="table-responsive">
+			<table class="table table-bordered">
+				<tbody>
+					<tr>
+						<td class="article-summary">
+							<h2 class="h4">ETAT CIVIL</h2>
+							<p>Acte de naissances, de décès</p>
+							<a href="{{path('app_etat_civil')}}" class="btn btn-info">Voir</a>
+						</td>
+						<td class="article-summary">
+							<h2 class="h4">CARTE NATIONALE D'IDENTITE</h2>
+							<p>Ceci est un résumé de l'article 2.</p>
+							<a href="{{path('app_carte_nationale_identite')}}" class="btn btn-info">Voir</a>
+						</td>
+						<td class="article-summary">
+							<h2 class="h4">PASSEPORT BIOMETRIQUE</h2>
+							<p>Ceci est un résumé de l'article 3.</p>
+							<a href="{{path('app_passeport_biometrique')}}" class="btn btn-info">Voir</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="article-summary">
+							<h2 class="h4">CERTIFICAT</h2>
+							<p>Copie, legislation et conservation de documents</p>
+							<a href="{{path('app_certificat')}}" class="btn btn-info">Voir</a>
+						</td>
+						<td class="article-summary">
+							<h2 class="h4">ELECTIONS</h2>
+							<p>Inscriptions sur liste électorale</p>
+							<a href="{{path('app_election')}}" class="btn btn-info">Voir</a>
+						</td>
+						<td class="article-summary">
+							<h2 class="h4">ARMEE</h2>
+							<p>Recensement JDC et service nationale</p>
+							<a href="{{path('app_armee')}}" class="btn btn-info">Voir</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="article-summary">
+							<h2 class="h4">CCAS AIDES PONCTUELLES</h2>
+							<p>#</p>
+							<a href="{{path('app_ccas_aides_ponctuelles')}}" class="btn btn-info">Voir</a>
+						</td>
+						<td class="article-summary">
+							<h2 class="h4">CCAS PASS JEUNES</h2>
+							<p>#</p>
+							<a href="{{path('app_ccas_pass_jeunes')}}" class="btn btn-info">Voir</a>
+						</td>
+						<td class="article-summary">
+							<h2 class="h4">URBANISME</h2>
+							<p>#</p>
+							<a href="{{path('app_urbanisme')}}" class="btn btn-info">Voir</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="container mt-5">
+		<a href="{{ path('app_base') }}" class="btn btn-dark-blue mb-4">Retour à la Page Principale</a>
+	</div>
+{% endblock %}

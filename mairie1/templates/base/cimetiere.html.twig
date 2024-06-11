@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wancourt -
+{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <h1 class="mb-4">Le Cimetiere De Wancourt</h1>
+        <p class="mb-4">Cliquez sur l'article de votre choix pour lire le résumé complet.</p>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="article-summary">
+                            <h2 class="h4">Plan du Cimetiere</h2>
+                            <p>Appuyez pour voir le plan du cimetiere</p>
+                            <a href="{{ path('app_plan_cimetiere') }}" class="btn btn-info">Voir</a>
+                        </td>
+                        <td class="article-summary">
+                            <h2 class="h4">Reglementation</h2>
+                            <p>Appuyez pour voir la reglementation du cimetiere</p>
+                            <a href="{{ path('app_reglement_cimetiere') }}" class="btn btn-info">Voir</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <a href="{{ path('app_mairie') }}" class="btn btn-dark-blue mb-4">Retour à la Page Mairie</a>
+    </div>
+{% endblock %}

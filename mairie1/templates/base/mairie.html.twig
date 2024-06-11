@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wancourt Mairie -
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-5">
+		<h1 class="mb-4">Mairie de Wancourt</h1>
+		<p class="mb-4">Cliquez sur l'article de votre choix pour lire le résumé complet.</p>
+		<div class="table-responsive">
+			<table class="table table-bordered">
+				<tbody>
+					<tr>
+						<td class="article-summary">
+							<h2 class="h4">AGENDA</h2>
+							<p>Ceci est un résumé de l'article 1.</p>
+							<a href="{{ path('app_agenda') }}" class="btn btn-info">Voir</a>
+						</td>
+						<td class="article-summary">
+							<h2 class="h4">HORAIRES</h2>
+							<p>Ceci est un résumé de l'article 2.</p>
+							<a href="{{ path('app_horaire') }}" class="btn btn-info">Voir</a>
+						</td>
+						<td class="article-summary">
+							<h2 class="h4">INFORMATIONS</h2>
+							<p>Ceci est un résumé de l'article 3.</p>
+							<a href="{{ path('app_info') }}" class="btn btn-info">Voir</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="article-summary">
+							<h2 class="h4">COMMISSIONS DELEGATIONS</h2>
+							<p>Ceci est un résumé de l'article 4.</p>
+							<a href="{{ path('app_commissions_et_delegations') }}" class="btn btn-info">Voir</a>
+						</td>
+						<td class="article-summary">
+							<h2 class="h4">ARRETES COMMUNAUX</h2>
+							<p>Ceci est un résumé de l'article 5.</p>
+							<a href="{{ path('app_arrete_communaux') }}" class="btn btn-info">Voir</a>
+						</td>
+						<td class="article-summary">
+							<h2 class="h4">CIMETIERE</h2>
+							<p>Ceci est un résumé de l'article 6.</p>
+							<a href="{{ path('app_cimetiere') }}" class="btn btn-info">Voir</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="container mt-5">
+		<a href="{{ path('app_base') }}" class="btn btn-dark-blue mb-4">Retour à la Page Principale</a>
+	</div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wancourt Planning -
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-5">
+		<h1 class="mb-4">Plannings et horaires</h1>
+		<p class="mb-4">Cliquez sur l'article de votre choix pour lire le résumé complet.</p>
+		<div class="table-responsive">
+			<table class="table table-bordered">
+				<tbody>
+					<tr>
+						<td class="article-summary">
+							<h2 class="h4">Déchets Verts</h2>
+							<p>Voir les horaires</p>
+							<a href="{{ path('app_dechet_vert') }}" class="btn btn-info">Voir</a>
+						</td>
+						<td class="article-summary">
+							<h2 class="h4">Passage du SMAV</h2>
+							<p>Voir les horaires</p>
+							<a href="{{ path('app_smav') }}" class="btn btn-info">Voir</a>
+						</td>
+						<td class="article-summary">
+							<h2 class="h4">Bus Artis</h2>
+							<p>Voir les horaires</p>
+							<a href="https://storage.googleapis.com/is-wp-119-prod/uploads-prod/2024/05/Rurale-LIGNE14-web-13-05-2024.pdf" class="btn btn-info">Voir</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="container mt-5">
+		<a href="{{ path('app_base') }}" class="btn btn-dark-blue mb-4">Retour à la Page Principale</a>
+	</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wancourt -
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<style>
+		body {
+			background-color: #f8f9fa;
+			color: #343a40;
+			font-family: 'Arial', sans-serif;
+		}
+		.text-center {
+			text-align: center;
+		}
+		.centered-image {
+			max-width: 100%;
+			height: auto;
+			display: block;
+			margin: 0 auto;
+		}
+	</style>
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-5">
+		<h1 class="mb-4 text-center">Endurance de Wancourt</h1>
+		{% set img1 = 'img/endurance_24.jpg' %}
+		<img src="{{ asset(img1) }}" class="img-fluid centered-image">
+		<div class="container mt-5 text-center">
+			<a href="https://www.facebook.com/people/Wancourt-Endurance-62/100066430871737/" class="btn btn-dark-blue mb-4">Visiter notre page Facebook</a>
+		</div>
+        <div class="container">
+        <a href="{{path('app_vie_associative')}}" class="btn btn-dark-blue mb-4">Retour à la page vie associative</a>
+    </div>
+	</div>
+{% endblock %}

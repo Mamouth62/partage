@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wancourt -
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<style>
+		body {
+			background-color: #f8f9fa;
+			color: #343a40;
+			font-family: 'Arial', sans-serif;
+		}
+		.center-content {
+			text-align: center;
+		}
+		.img-fluid {
+			max-width: 100%;
+			height: auto;
+		}
+	</style>
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-5">
+		<div class="center-content">
+			<h1 class="mb-4">1 Juin Brocante Nouveau Trace</h1>
+			<h5>BROCANTE JUIN 2024 PARTICULIERS UNIQUEMENT<br>
+				BULLETIN INSCRIPTION BROCANTE 2024<br>
+				UNIQUEMENT PARTICULIERS<br>
+				PERMANANCE MAIRIE 23 ET 24 JUIN DE 14H A 19H POUR INSCRIPTION</h5>
+			<div class="row mt-4">
+				<div class="col-md-6">
+					{% set img1 = 'img/brocante1.PNG' %}
+					<img src="{{ asset(img1) }}" class="img-fluid" alt="Image 1">
+				</div>
+				<div class="col-md-6">
+					{% set img2 = 'img/brocante2.PNG' %}
+					<img src="{{ asset(img2) }}" class="img-fluid" alt="Image 2">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container mt-5">
+		<a href="{{ path('app_journal') }}" class="btn btn-dark-blue mb-4">Retour à la Page Journal</a>
+	</div>
+{% endblock %}

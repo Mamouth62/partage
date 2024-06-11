@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+{% block title %}Wancourt -
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-5">
+		<h1 class="mb-4">RPI</h1>
+		<h5>Le RPI (Regroupement Pédagogique Interscolaire) est constitué de 5 écoles<br>
+			Wancourt  (03 21 73 25 71):  école maternelle. Toutes sections de maternelle<br>
+			Guémappe (03 21 55 01 78) :  école maternelle grande section et CP<br>
+			Héninel (03 21 60 62 31) :  CE1<br>
+			Chérisy  (03 21 73 33 01):  CE2 et CM1<br>
+			Fontaine les Croisilles (03 21 15 39 96) :  CM1 et CM2<br>
+			La cantine et la garderie qui sont gérées par l'ACGRPI (Association Cantine Garderie du Regroupement Pédagogique Intercommunal), fonctionnent pendant les périodes scolaires à la salle polyvalente de Guémappe, seuls les enfants scolarisés dans le RPI y sont acceptés.<br>
+			Contact ACGRPI   ==>  Secrétariat :  acgrpi59@gmail.com<br>
+			Cantine / garderie  03-21-48-56-80  (de 7h15 à 9h30, de 11h à 12h et de 16h30 à 18h45)<br>
+			Service comptabilité: compta.acgrpi59@gmail.com<br><br>
+			Vous trouverez ci-dessous quelques éléments d'information merci de vous référer aux pièces jointes en bas de page pour des informations plus précises.<br><br></h5>
+		<h3>La cantine</h3>
+		<h4>Tarifs 2023-2024:<h4>
+				<h5>
+					repas occasionnel : 6.20 €<br>
+					1 repas par semaine : 5.20 €<br>
+					2 repas par semaine : 5.00 €<br>
+					3 repas par semaine : 4.70 €<br>
+					4 repas par semaine : 4.60 €</h5><br>
+				<h4>Plein tarif pour le 1er enfant de la famille. Réduction de :</h4>
+				<h5>5% pour le 2ème enfant<br>
+					7% pour le 3ème enfant<br>
+					10% pour le 4ème enfant<br>
+					Toute nouvelle inscription régulière est assujettie au paiement d'une caution obligatoire de 50€ par enfant, paiement par chèque de préférence,<br><br></h5>
+				<h3>Quand faut-il réserver ?</h3>
+				<h5>La réservation de la cantine/garderie du soir se fait à la semaine ou à l'année, un planning par période vous est envoyé par mail  à retourner<br>
+					au plus tard le mercredi 12h précédent la semaine concernée soit par mail ou dans la boîte aux lettres de la mairie de Guémappe.<br>
+					Sans planning avant le mercredi 12h,votre enfant ne pourra pas bénéficier de la cantine scolaire.<br>
+					En cas de réservation hors délai, le tarif du repas exceptionnel sera appliqué lorsque cette demande est justifiée (par exemple: changement de<br>
+					planning, justificatif à nous fournir).</h5><br>
+				<h3>La Garderie</h3>
+				<h4>Tarifs :</h4>
+				<h5>3.00€ pour 1 heure. (facturé au 1/4 d'heure)<br>
+					Les mêmes réductions que pour la cantine sont appliquées.<br><br></h5>
+				<h4>Horaires :</h4>
+				<h5>Matin : de 7h15 à la rentrée des classes<br>
+					Soir : de la sortie des classes à 18h45<br>
+					Une pénalité de 5.00€ sera appliquée si l'enfant est repris en dehors de l'horaire indiqué sans avoir prévenu par téléphone ou sans motif valable.</h5><br><br>
+				{% set img = 'img/rpi.png' %}
+				<div class="text-center">
+					<img src="{{ asset(img) }}" class="img-fluid" style="max-width: 50%; height: auto;">
+				</div>
+				<h5>Documents à télécharger :</h5>
+				<p>
+					<a href="https://www.wancourt.fr/data/documents/rpi/REGLEMENT_INTERIEUR.pdf">data/documents/rpi/REGLEMENT_INTERIEUR.pdf</a><br>
+					<a href="https://www.wancourt.fr/data/documents/rpi/CONDITIONS_GENERALES_ACGRPI.pdf">data/documents/rpi/CONDITIONS_GENERALES_ACGRPI.pdf</a><br>
+					<a href="https://www.wancourt.fr/data/documents/rpi/FICHE_D_INSCRIPTION_2023_2024.pdf">data/documents/rpi/FICHE_D_INSCRIPTION_2023_2024.pdf</a>
+				</p>
+				<div class="container mt-5">
+					<a href="{{ path('app_education') }}" class="btn btn-dark-blue mb-4">Retour à la Page Education</a>
+				</div>
+			{% endblock %}
+		

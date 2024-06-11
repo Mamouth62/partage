@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Élection et Inscription sur les listes électorales - Wancourt
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<style>
+		body {
+			background-color: #f8f9fa;
+			color: #343a40;
+			font-family: 'Arial', sans-serif;
+		}
+		.content-section {
+			margin-top: 20px;
+		}
+		.content-section h2 {
+			margin-bottom: 15px;
+		}
+		.content-section p {
+			margin-bottom: 10px;
+		}
+	</style>
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-5">
+		<h1 class="mb-4">Élection</h1>
+		<div class="content-section">
+			<h2>Inscription sur les listes électorales</h2>
+			<p>Pour pouvoir voter, vous devez être inscrit sur les listes électorales. L'inscription est possible dès l'âge de 18 ans et peut se faire à tout moment de l'année. Cependant, pour voter lors des prochaines élections, il est nécessaire de s'inscrire avant une date limite spécifique.</p>
+			<p>
+				<strong>Comment s'inscrire :</strong>
+			</p>
+			<ul>
+				<li>En ligne sur le site
+					<a href="https://www.service-public.fr/particuliers/vosdroits/N47" target="_blank">Service-Public.fr</a>
+				</li>
+				<li>En vous rendant en mairie avec une pièce d'identité et un justificatif de domicile</li>
+				<li>Par courrier en envoyant à la mairie le formulaire d'inscription dûment rempli, accompagné des pièces justificatives</li>
+			</ul>
+		</div><br>
+		<div class="container">
+			<a href="{{ path('app_vie_pratique') }}" class="btn btn-dark-blue mb-4">Retour à la Page Vie Pratique</a>
+		</div>
+	</div>
+{% endblock %}

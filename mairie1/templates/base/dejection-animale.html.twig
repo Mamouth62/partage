@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wancourt -{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        body {
+            background-color: #f8f9fa; 
+            color: #343a40; 
+            font-family: 'Arial', sans-serif; 
+        }
+        .text-center img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+		<h1 class="mb-4">Déjection Animale</h1>
+{% endblock %}

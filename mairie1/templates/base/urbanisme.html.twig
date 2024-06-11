@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wancourt Journal-
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<style>
+		body {
+			background-color: #f8f9fa;
+			color: #343a40;
+			font-family: 'Arial', sans-serif;
+		}
+		.text-center img {
+			max-width: 100%;
+			height: auto;
+			display: block;
+			margin: 0 auto;
+		}
+	</style>
+{% endblock %}
+{% block body %}
+	<div class="container mt-5">
+		<h1 class="mb-4">URBANISME</h1>
+		<p class="mb-4">Cliquez.</p>
+		<div class="table-responsive">
+			<table class="table table-bordered">
+				<tbody>
+					<tr>
+						<td class="article-summary">
+							<h2 class="h4">PLANNING ET HORRAIRES</h2>
+							<p>Voir les plannings et les horraires .</p>
+							<a href="{{ path('app_planning') }}" class="btn btn-info">Voir</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="container mt-5">
+		<a href="{{ path('app_base') }}" class="btn btn-dark-blue mb-4">Retour à la Page Principale</a>
+	</div>
+{% endblock %}

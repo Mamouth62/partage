@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wancourt Journal-
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #343a40;
+            font-family: 'Arial', sans-serif;
+        }
+        .text-center img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <h1 class="mb-4">Résultats élections européennes 2024 </h1>
+    </div>
+    {% set img = 'img/resultats_europeennes.jpg' %}
+    <div class="text-center">
+        <img src="{{ asset(img) }}">
+    </div>
+    <div class="container mt-5 d-flex justify-content-between">
+        <a href="{{ path('app_journal') }}" class="btn btn-dark-blue mb-4">Retour à la Page Journal</a>
+        <button onclick="window.print()" class="btn btn-dark-blue mb-4">Imprimer</button>
+    </div>
+{% endblock %}

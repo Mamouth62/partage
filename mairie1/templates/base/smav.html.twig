@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wancourt Journal-
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<style>
+		body {
+			background-color: #f8f9fa;
+			color: #343a40;
+			font-family: 'Arial', sans-serif;
+		}
+		.text-center img {
+			max-width: 100%;
+			height: auto;
+			display: block;
+			margin: 0 auto;
+		}
+	</style>
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-5">
+		<h1 class="mb-4">Passage du SMAV</h1><br>
+	<h3>Déchets ménagers</h3>
+	<h5>Le Syndicat Mixte Artois Valorisation (SMAV), créé en 2002, est l’établissement public qui collecte et valorise les déchets de ses 5 adhérents, à savoir la Communauté Urbaine d’Arras (CUA), la Communauté de Communes La Porte des Vallées (CCPV), la Communauté de Communes de l’Atrébatie (CCA), la Communauté de Communes des 2 Sources (CC2S) et la Communauté de Communes Sud Artois (CCSA). Ceux-ci ont transféré au SMAV la compétence de la collecte et du traitement des déchets.<br>
+		Le SMAV est au service d’environ 166 000 habitants qui vivent dans 196 communes, dont Wancourt, sur un territoire de 1 232 km².<br>
+		Le SMAV assure une mission de service public en assurant la collecte, le recyclage, le réemploi et la valorisation des déchets ménagers.<br>
+		Pour toute question sur la collecte, les déchèteries, le tri sélectif, n’hésitez pas à contacter le SMAV au numéro vert (gratuit depuis un poste fixe) 0 800 62 10 62.</h5><br>
+	{% set img = 'img/nvert.png' %}
+	<div class="text-center">
+		<img src="{{ asset(img) }}">
+	</div>
+	<br><h5>Ou à vous rendre sur leur site internet <a href="https://www.smav62.fr">www.smav62.fr</a></h5>
+	<br><h3>Déchèterie</h3>
+	<h5>En tant que particulier, vous avez accès à l’ensemble des déchèteries du SMAV. La plus proche de notre commune est située à Saint Laurent Blangy - Zone des 3 fontaines<br><br>
+		La déchèterie de Saint Laurent Blangy accueille également la <a  href="https://www.wancourt.fr/data/documents/mairie/smav/depliant-recyclerie.pdf">recyclerie</a>, boutique de vente d'objets récupérés et en bon état.<br>
+		Le cercle des Objets est ouverte au public le mercredi de 13h30 à 16h30 et le samedi de 9h à 12h.<br>
+		Les professionnels ont accès aux déchèteries d’Avesnes-le-Comte, de Bapaume et de Saint-Laurent-Blangy.<br><br>
+		Sur le territoire de la commune, vous trouverez les points d’apport volontaire suivants (dont des bornes à verre) :<br>
+		- Résidence La Couture
+		<br>
+		- Rue des Flandres (derrière la salles des fêtes)<br></h5>
+	{% set img = 'img/decheterie.jpg' %}
+	<div class="text-center">
+		<img src="{{ asset(img) }}">
+	</div>
+	<h3>Collecte des ordures ménagères</h3>
+	<h5>La commune propose aux personnes de plus de 60 ans de prendre en charge à domicile les
+		<br>
+		objets encombrants (très encombrants) pour les déposer à la déchetterie mobile les mercredi
+		<br>
+		Pour une bonne organisation du ramassage, vous pouvez vous inscrire en mairie eu plus tard
+		<br>
+		le lundi précédent avant 12h.</h5>
+	<div class="container mt-5 d-flex justify-content-between">
+		<a href="{{ path('app_planning') }}" class="btn btn-dark-blue mb-4">Retour à la Page Planning et Horaires</a>
+	</div>
+	</div>
+{% endblock %}

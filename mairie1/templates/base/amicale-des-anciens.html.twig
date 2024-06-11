@@ -1,0 +1,146 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wancourt -
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<style>
+		body {
+			background-color: #f8f9fa;
+			color: #343a40;
+			font-family: 'Arial', sans-serif;
+		}
+		.text-center img {
+			max-width: 100%;
+			height: auto;
+			display: block;
+			margin: 0 auto;
+		}
+		body {
+			background-color: #f8f9fa; /* Gris clair */
+			color: #343a40; /* Gris foncé */
+			font-family: 'Arial', sans-serif; /* Police appropriée */
+		}
+		table {
+			margin: 20px auto;
+			width: 80%;
+			border-collapse: collapse;
+		}
+		th,
+		td {
+			padding: 10px;
+			border: 1px solid #dee2e6;
+			text-align: center;
+		}
+		th {
+			background-color: #003366; /* Bleu foncé */
+			color: white;
+		}
+	</style>
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-5">
+		<h1 class="mb-4">Amicale des anciens</h1>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 text-center">
+				{% set img1 = 'img/ada.jpg' %}
+				<img src="{{ asset(img1) }}" class="img-fluid" alt="Description de l'image 1">
+			</div>
+			<div class="col-md-6 text-center">
+				{% set img2 = 'img/ada1.jpg' %}
+				<img src="{{ asset(img2) }}" class="img-fluid" alt="Description de l'image 2">
+			</div>
+		</div>
+	</div>
+	<div class="container mt-5">
+		<h5>L’amicale des anciens de Wancourt et d'Héninel s’adresse à toutes les personnes retraitées pour leur permettre de conserver des contacts humains et ne pas rester isolées.<br><br>
+
+			Un fois tous les 15 jours, le jeudi après-midi à partir de 14h00, nous nous retrouvons à la salle des associations, pour jouer aux cartes, aux jeux de société ou bavarder tout simplement autour d’une collation, toujours dans une ambiance courtoise et chaleureuse.<br><br>
+
+			Outre ces après-midis récréatives, nous organisons des sorties d’une journée, les repas d’anniversaire une fois par trimestre ainsi que notre repas de fin d’année.<br><br>
+
+			Le club est ouvert à tous et nous permet de se sentir moins seul(e)s, de se créer des amitiés et éventuellement s’épauler moralement.<br><br>
+
+			Nous vous attendons ….<br><br>
+
+			La cotisation annuelle est de 16€<br><br>
+
+			Président et contact :<br>
+
+			Monsieur Blondel Michel 03 21 48 14 21 ou 06-88-04-14-56<br><br>
+
+			Mail   michel.blondel0245@orange.fr<h5></div><br><br>
+			<div class="text-center">
+				<h2>Calendrier 2023</h2><br>
+			</div>
+			<table>
+				<thead>
+					<tr>
+						<th>Mois</th>
+						<th>Date</th>
+						<th>Événement</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td rowspan="2">Février</td>
+						<td>Jeudi 09</td>
+						<td>Cartes et Jeux de Société</td>
+					</tr>
+					<tr>
+						<td>Jeudi 23</td>
+						<td>Repas des Anniversaires Premier Trimestre</td>
+					</tr>
+					<tr>
+						<td rowspan="2">Mars</td>
+						<td>Jeudi 09</td>
+						<td>Cartes et Jeux de Société</td>
+					</tr>
+					<tr>
+						<td>Jeudi 23</td>
+						<td>Cartes et Jeux de Société</td>
+					</tr>
+					<tr>
+						<td rowspan="2">Avril</td>
+						<td>Jeudi 13</td>
+						<td>Cartes et Jeux de Société</td>
+					</tr>
+					<tr>
+						<td>Jeudi 27</td>
+						<td>Cartes et Jeux de Société</td>
+					</tr>
+					<tr>
+						<td rowspan="2">Mai</td>
+						<td>Jeudi 11</td>
+						<td>Cartes et Jeux de Société</td>
+					</tr>
+					<tr>
+						<td>Jeudi 25</td>
+						<td>Repas des Anniversaires Deuxième Trimestre</td>
+					</tr>
+					<tr>
+						<td rowspan="2">Juin</td>
+						<td>Jeudi 08</td>
+						<td>Cartes et Jeux de Société</td>
+					</tr>
+					<tr>
+						<td>Jeudi 22</td>
+						<td>Cartes et Jeux de Société</td>
+					</tr>
+					<tr>
+						<td rowspan="2">Juillet</td>
+						<td>Jeudi --</td>
+						<td>Cartes et Jeux de Société</td>
+					</tr>
+					<tr>
+						<td>Jeudi --</td>
+						<td>Cartes et Jeux de Société</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	{% endblock %}

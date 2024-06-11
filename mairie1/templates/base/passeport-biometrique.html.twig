@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Passeports biométriques - Wancourt
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<style>
+		body {
+			background-color: #f8f9fa;
+			color: #343a40;
+			font-family: 'Arial', sans-serif;
+		}
+		.content-section {
+			margin-top: 20px;
+		}
+		.content-section h2 {
+			margin-bottom: 15px;
+		}
+		.content-section p {
+			margin-bottom: 10px;
+		}
+	</style>
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-5">
+		<h1 class="mb-4 text-center">Passeports biométriques - Mairie de Wancourt</h1>
+		{% set img = 'img/passeport.jpg' %}
+		<div class="text-center">
+			<img src="{{ asset(img) }}" class="img-fluid" style="max-width: 50%; height: auto;">
+		</div>
+        <div class="text-center mt-5">
+			<a href="https://ants.gouv.fr/nos-missions/les-titres-produits-par-l-ants/les-documents-d-identite/le-passeport-biometrique" class="btn btn-dark-blue">Lien vers les Services Publiques</a>
+		</div>
+		<div class="content-section"><br>
+			<h2>Procédure de demande de passeport biométrique</h2>
+			<p>Pour obtenir un passeport biométrique, vous devez suivre les étapes suivantes :</p>
+			<ol>
+				<li>Remplir le formulaire de demande en ligne sur le site officiel du gouvernement.</li>
+				<li>Prendre rendez-vous à la mairie pour déposer votre dossier.</li>
+				<li>Apporter les documents requis : une photo d'identité récente, un justificatif de domicile, et votre ancien passeport si vous en avez un.</li>
+			</ol>
+		</div>
+		<div class="content-section">
+			<h2>Documents nécessaires</h2>
+			<p>Voici la liste des documents nécessaires pour faire une demande de passeport biométrique :</p>
+			<ul>
+				<li>Formulaire de demande complété</li>
+				<li>Photo d'identité conforme aux normes en vigueur</li>
+				<li>Justificatif de domicile (facture d'électricité, quittance de loyer, etc.)</li>
+				<li>Ancien passeport (si renouvellement)</li>
+				<li>Acte de naissance (pour une première demande)</li>
+				<li>Document prouvant la nationalité française (si nécessaire)</li>
+				<li>Timbres fiscaux pour le paiement des frais de dossier</li>
+			</ul>
+		</div>
+		<div class="container">
+			<a href="{{ path('app_vie_pratique') }}" class="btn btn-dark-blue mb-4">Retour à la Page Vie Pratique</a>
+		</div>
+	</div>
+{% endblock %}

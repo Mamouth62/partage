@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wancourt -
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<style>
+		body {
+			background-color: #f8f9fa;
+			color: #343a40;
+			font-family: 'Arial', sans-serif;
+		}
+		.text-center img {
+			max-width: 100%;
+			height: auto;
+			display: block;
+			margin: 0 auto;
+		}
+	</style>
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-5">
+		<h1 class="mb-4">Recensement</h1>
+		<div class="content-section">
+			<h2>Recensement Citoyen Obligatoire</h2>
+			<p>Le recensement citoyen est une démarche obligatoire pour tous les jeunes de nationalité française. Cette démarche doit être effectuée dans les trois mois qui suivent le 16ème anniversaire.</p>
+			<p>Elle permet à l'administration de convoquer le jeune pour qu'il effectue la journée défense et citoyenneté (JDC), et de l'inscrire automatiquement sur les listes électorales à ses 18 ans.</p>
+		</div>
+		<div class="content-section">
+			<h2>Comment se recenser</h2>
+			<p>Le recensement peut se faire de différentes manières :</p>
+			<ul>
+				<li>En ligne sur le site
+					<a href="https://www.service-public.fr/particuliers/vosdroits/N24" target="_blank">Service-Public.fr</a>
+				</li>
+				<li>En vous rendant en mairie avec une pièce d'identité, le livret de famille et un justificatif de domicile</li>
+				<li>Par courrier en envoyant à la mairie les documents nécessaires</li>
+			</ul>
+		</div>
+		{% set img = 'img/jdc.png' %}
+		<div class="text-center">
+			<img src="{{ asset(img) }}" class="img-fluid" style="max-width: 50%; height: auto;">
+		</div>
+		<div class="container mt-5">
+			<a href="{{ path('app_vie_pratique') }}" class="btn btn-dark-blue mb-4">Retour à la Page Vie Pratique</a>
+		</div>
+	{% endblock %}

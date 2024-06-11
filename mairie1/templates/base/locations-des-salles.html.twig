@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wancourt - Location des salles
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-5">
+		<h1 class="mb-4">Location des salles</h1>
+		<p class="mb-4">Cliquez sur la salle qui vous intéresse</p>
+		<div class="table-responsive">
+			<table class="table table-bordered">
+				<tbody>
+					<tr>
+						<td class="article-summary">
+							<h2 class="h4">SALLE DES FÊTES RUE DE FLANDRES</h2>
+							<p>#</p>
+							<a href="{{ path('app_rue_flandres') }}" class="btn btn-info">Voir</a>
+						</td>
+						<td class="article-summary">
+							<h2 class="h4">SALLE DES ASSOCIATIONS RUE D'ALSACE</h2>
+							<p>#</p>
+							<a href="{{ path('app_rue_alsace') }}" class="btn btn-info">Voir</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="container mt-5">
+		<a href="{{ path('app_base') }}" class="btn btn-dark-blue mb-4">Retour à la Page Principale</a>
+	</div>
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wancourt -
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<style>
+		body {
+			background-color: #f8f9fa;
+			color: #343a40;
+			font-family: 'Arial', sans-serif;
+		}
+		.text-center img {
+			max-width: 100%;
+			height: auto;
+			display: block;
+			margin: 0 auto;
+		}
+	</style>
+{% endblock %}
+
+{% block body %}
+	<br><br>
+	<div class="container mt-5">
+		<h1 class="mb-4">Les Art's Coeur</h1>
+	</div>
+	{% set img = 'img/art_coeur.jpg' %}
+	<div class="text-center">
+		<img src="{{ asset(img) }}" class="img-fluid" style="max-width: 50%; height: auto;">
+	</div>
+	<div class="container mt-5">
+		<h5>Notre club "Les art's coeur" vous accueille de septembre à juin<br>
+			Notre objectif : vous faire découvrir la danse moderne dans une ambiance détendue chaque samedi après midi<br>
+			Si vous avez 6 ans et plus, les horaires sont les suivants:<br>
+			. Groupe de 6 à 8 ans : de 13h30 à 14h30<br>
+			. Groupe de 9 à 11 ans : 14h30 à 15h30<br>
+			. Groupe de 12 à 15 ans : 15h30 à 16h30<br>
+			. Groupe adultes à partir de 16 ans : 16h30 à 17h30<br><br>
+			Renseignements auprès de Mr BEEUWSAERT Johann par mail: "lesartscoeur@gmail.com"<br>
+			15 et 16 juin 2024 gala annuel sur réservation uniquement</h5><br>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 text-center">
+					{% set img1 = 'img/gala.jpg' %}
+					<img src="{{ asset(img1) }}" class="img-fluid" alt="Description de l'image 1">
+				</div>
+				<div class="col-md-6 text-center">
+					{% set img2 = 'img/gala1.jpg' %}
+					<img src="{{ asset(img2) }}" class="img-fluid" alt="Description de l'image 2">
+				</div>
+			</div>
+		</div><br>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 text-center">
+					{% set img3 = 'img/gala2.jpg' %}
+					<img src="{{ asset(img3) }}" class="img-fluid" alt="Description de l'image 1">
+				</div>
+				<div class="col-md-6 text-center">
+					{% set img4 = 'img/gala3.jpg' %}
+					<img src="{{ asset(img4) }}" class="img-fluid" alt="Description de l'image 2">
+				</div>
+			</div>
+		</div>
+        <div class="container mt-5">
+			<a href="{{ path('app_vie_associative') }}" class="btn btn-dark-blue mb-4">Retour à la Page Vie Associative</a>
+		</div>
+	{% endblock %}

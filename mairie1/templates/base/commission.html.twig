@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wancourt Mairie-
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-5">
+		<h1 class="mb-4">Commissions et délégations</h1>
+		{% set img = 'img/202304_COMMISSIONS_COMMUNALES1.jpg' %}
+		<br>
+		<div class="text-center">
+			<h4>COMMISSIONS COMMUNALES<br><br>
+				Le maire, Eric DUFLOT, est Président de toutes les commissions</h4><br>
+			<img src="{{ asset(img) }}"><br>
+			<h4>DELEGATIONS</h4><br>
+			{% set img = 'img/202304_COMMISSIONS_COMMUNALES2.jpg' %}
+			<img src="{{ asset(img) }}">
+		</div>
+		<div class="container">
+			<a href="{{path('app_mairie')}}" class="btn btn-dark-blue mb-4">Retour à la page mairie</a>
+		</div>
+	{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wancourt Journal-
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<style>
+		body {
+			background-color: #f8f9fa;
+			color: #343a40;
+			font-family: 'Arial', sans-serif;
+		}
+		.text-center img {
+			max-width: 100%;
+			height: auto;
+			display: block;
+			margin: 0 auto;
+		}
+	</style>
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-5">
+		<h1 class="mb-4">Relais Assistantes Maternelles</h1>
+		<h5>Pour connaître les disponibilités des assistantes maternelles ,merci de contacter le Relais Petite Enfance « TRAMpoline » au 03.21.21.28.90<br>
+			Renseignements Contact : Melle Adeline DUPENT<br>
+			Le lundi et le jeudi de 13h30 à 17h00.<br><br>
+			Courriel :<br>
+			a.dupent.ram@mairie-beaurains.fr<br>
+			d.lewandowski.ram@mairie-beaurains.fr<br>
+			Lien direct vers le site : <a  href="https://mon.enfant.fr">mon.enfant.fr</a></h5>
+		<div class="container mt-5 d-flex justify-content-between">
+			<a href="{{ path('app_education') }}" class="btn btn-dark-blue mb-4">Retour à la Page Education</a>
+		</div>
+	</div>
+{% endblock %}

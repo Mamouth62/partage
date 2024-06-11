@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wancourt Journal -
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-5">
+		<h1 class="mb-4">Vies Associatives</h1>
+		<p class="mb-4">Cliquez sur l'article de votre choix pour lire le résumé complet.</p>
+		<div class="table-responsive">
+			<table class="table table-bordered">
+				<tbody>
+					<tr>
+						<td class="article-summary">
+							<h2 class="h4">WANCOURT FITCLUB</h2>
+							<p>#</p>
+							<a href="{{path('app_fitclub')}}" class="btn btn-info">Voir</a>
+						</td>
+						<td class="article-summary">
+							<h2 class="h4">ASSOCIATION PARENTS D'ELEVES</h2>
+							<p>#</p>
+							<a href="{{path('app_association_parents_eleves')}}" class="btn btn-info">Voir</a>
+						</td>
+						<td class="article-summary">
+							<h2 class="h4">AMICALE DES ANCIENS</h2>
+							<p>#</p>
+							<a href="{{path('app_amicale_des_anciens')}}" class="btn btn-info">Voir</a>
+						</td>
+						<td class="article-summary">
+							<h2 class="h4">SOPHROLOGIE</h2>
+							<p>#</p>
+							<a href="{{path('app_sophrologie')}}" class="btn btn-info">Voir</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="article-summary">
+							<h2 class="h4">LES ART'COEUR</h2>
+							<p>#</p>
+							<a href="{{path('app_art_coeur')}}" class="btn btn-info">Voir</a>
+						</td>
+						<td class="article-summary">
+							<h2 class="h4">BIBLIOTHEQUE DE WANCOURT</h2>
+							<p>#</p>
+							<a href="{{path('app_bibliotheque')}}" class="btn btn-info">Voir</a>
+						</td>
+						<td class="article-summary">
+							<h2 class="h4">COMITE DES FETES</h2>
+							<p>#</p>
+							<a href="{{path('app_comite_des_fetes')}}" class="btn btn-info">Voir</a>
+						</td>
+						<td class="article-summary">
+							<h2 class="h4">WANCOURT ENDURANCE</h2>
+							<p>#</p>
+							<a href="{{path('app_endurance')}}" class="btn btn-info">Voir</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="container mt-5">
+		<a href="{{ path('app_base') }}" class="btn btn-dark-blue mb-4">Retour à la Page Principale</a>
+	</div>
+{% endblock %}

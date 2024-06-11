@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wancourt -
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<style>
+		body {
+			background-color: #f8f9fa;
+			color: #343a40;
+			font-family: 'Arial', sans-serif;
+		}
+		.text-center img {
+			max-width: 100%;
+			height: auto;
+			display: block;
+			margin: 0 auto;
+		}
+	</style>
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-5">
+		<h1 class="mb-4">Fitclub</h1>
+		<h5>De septembre à juin, un cours hebdomadaire de gym d'entretien (remise en forme, aérobie, renforcement musculaire, ...) est mis en place à la salle des fêtes. Les séances sont encadrées par un moniteur possédant un brevet d'état,
+			
+			<br><br>Personne à contacter : Laurent Quint 06.62.25.16.33 <br><br>
+			 
+			2 cours ont lieu tous les mercredis de 18h45 à 19h45, et de 19h45 à 20h45.<br><br>
+			 
+			Il n'y a aucune limite d'âge !<br><br>
+			
+			Un certificat médical d'aptitude est obligatoire dès le premier cours.<br><br>
+			 
+			Le montant de la cotisation annuelle est de 45€ par personne,
+			Rapporter si possible un tapis de sol.<br><br>
+			
+			Prendre contact auprès de Laurent pour inscription
+		</h5>
+	{% endblock %}

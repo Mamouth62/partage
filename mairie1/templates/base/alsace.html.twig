@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wancourt -
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<style>
+		body {
+			background-color: #f8f9fa;
+			color: #343a40;
+			font-family: 'Arial', sans-serif;
+		}
+		.text-center img {
+			max-width: 100%;
+			height: auto;
+			display: block;
+			margin: 0 auto;
+		}
+	</style>
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-5">
+		<h1 class="mb-4">Salle des associations rue d'Alsace</h1>
+		<h5>Situé derriére l'église, la salle des associations comprend un parking de 13 places et d'une aire de jeux pour jeunes enfants.
+			<br><br>
+			Location que pour les Wancourtois<br>
+			75 € journée comprenant vaisselle et électricité
+			<br>
+			2 chéques de caution sont demandés à la remise des clés: 300€ et 30€ pour la caution ménage.</h5><br>
+		{% set img = 'img/cuisine_alsace.jpg' %}
+		<div class="text-center">
+			<img src="{{ asset(img) }}" class="img-fluid" style="max-width: 50%; height: auto;">
+			<h5>Cuisine</h5><br>
+			{% set img = 'img/entree_alsace.jpg' %}
+			<img src="{{ asset(img) }}" class="img-fluid" style="max-width: 50%; height: auto;">
+			<h5>Entrée de la salle</h5><br>
+			{% set img = 'img/panoramique_alsace.jpg' %}
+			<img src="{{ asset(img) }}" class="img-fluid" style="max-width: 50%; height: auto;">
+			<h5>Panoramique de la salle</h5><br>
+		</div>
+		<div class="container mt-5">
+			<a href="{{ path('app_base') }}" class="btn btn-dark-blue mb-4">Retour à la Page Principale</a>
+		</div>
+	{% endblock %}
