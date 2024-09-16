@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wancourt Journal -{% endblock %}
+
+{% block stylesheets %}
+<style>
+    .image-container {
+        display: flex; 
+        justify-content: space-between; 
+        flex-wrap: wrap; 
+    }
+    .image-container img {
+        flex: 1; 
+        max-width: 32%; 
+        height: auto; 
+        margin: 0 10px; 
+        max-height: 500px; 
+    }
+    .container-btns {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+    <div class="container mt-5 text-center">
+        <h1 class="mb-4">Agenda Ecologique 2024</h1>
+        <div class="image-container mb-4">
+            {% set img = 'img/agenda_eco1.jpg' %}
+            <img src="{{ asset(img) }}" alt="Agenda Eco 1">
+            {% set img = 'img/agenda_eco2.jpg' %}
+            <img src="{{ asset(img) }}" alt="Agenda Eco 2">
+            {% set img = 'img/agenda_eco3.jpg' %}
+            <img src="{{ asset(img) }}" alt="Agenda Eco 3">
+        </div>
+        <div class="container-btns mt-5">
+            <a href="{{ path('app_journal') }}" class="btn btn-dark-blue mb-4">Retour à la Page Journal</a>
+            <button onclick="window.print()" class="btn btn-dark-blue mb-4">Imprimer</button>
+        </div>
+    </div>
+{% endblock %}

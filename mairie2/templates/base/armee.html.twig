@@ -1,0 +1,118 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wancourt - Recensement 16 ans
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<style>
+		body {
+			background: url('{{ asset('img/aire_jeu_sdf.JPG') }}') no-repeat center center fixed;
+			background-size: cover;
+		}
+
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+		}
+
+		.content-wrapper {
+			background-color: rgba(255, 255, 255, 0.85);
+			padding: 20px;
+			border-radius: 10px;
+			margin-top: 20px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+
+		h1,
+		h2,
+		h3 {
+			color: rgba(51, 51, 51, 0.8);
+			text-align: center;
+		}
+
+		.text-center {
+			text-align: center;
+		}
+
+		.btn-container {
+			padding: 10px;
+			border-radius: 10px;
+			text-align: center;
+			margin-top: 20px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+
+		.content-section {
+			margin-top: 20px;
+		}
+
+		.content-section h2 {
+			margin-bottom: 15px;
+		}
+
+		.content-section p {
+			margin-bottom: 10px;
+		}
+
+		ul {
+			color: rgba(51, 51, 51, 0.8);
+			margin-left: 20px;
+		}
+
+		ul li {
+			margin-bottom: 10px;
+		}
+
+		a {
+			color: #007bff;
+			text-decoration: none;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		.img-fluid {
+			max-width: 100%;
+			height: auto;
+			display: block;
+			margin: 20px auto 0;
+		}
+	</style>
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-5">
+		<div class="content-wrapper">
+			<h1 class="mb-4">Recensement 16 ans</h1>
+			<div class="content-section">
+				<h2>Recensement Citoyen Obligatoire</h2>
+				<p>Le recensement citoyen est une démarche obligatoire pour tous les jeunes de nationalité française. Cette démarche doit être effectuée dans les trois mois qui suivent le 16ème anniversaire.</p>
+				<p>Elle permet à l'administration de convoquer le jeune pour qu'il effectue la journée défense et citoyenneté (JDC), et de l'inscrire automatiquement sur les listes électorales à ses 18 ans.</p>
+			</div>
+			<div class="content-section">
+				<h2>Comment se recenser</h2>
+				<p>Le recensement peut se faire de différentes manières :</p>
+				<ul>
+					<li>En ligne sur le site
+						<a href="https://www.service-public.fr/particuliers/vosdroits/N24" target="_blank">Service-Public.fr</a>
+					</li>
+					<li>En vous rendant en mairie avec une pièce d'identité, le livret de famille et un justificatif de domicile</li>
+					<li>Par courrier en envoyant à la mairie les documents nécessaires</li>
+				</ul>
+			</div>
+			{% set img = 'img/jdc.png' %}
+			<div class="text-center">
+				<img src="{{ asset(img) }}" class="img-fluid">
+			</div>
+			<div class="btn-container">
+				<div class="container mt-5">
+					<a href="{{ path('app_vie_pratique') }}" class="btn btn-dark-blue mb-4">Retour à la Page Vie Pratique</a>
+					<button onclick="window.print()" class="btn btn-dark-blue mb-4">Imprimer</button>
+				</div>
+			</div>
+		</div>
+	</div><br>
+</div>
+{% endblock %}

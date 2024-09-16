@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mairie de Wancourt</title>
+    <style>
+        .carousel-container {
+            width: 90%;
+            margin: auto;
+            position: relative;
+        }
+        .carousel-inner {
+            display: flex;
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+        }
+        .carousel-item {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .carousel-item.active {
+            opacity: 1;
+            z-index: 1;
+        }
+        .carousel-control-prev,
+        .carousel-control-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            font-size: 24px;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 2;
+        }
+        .carousel-control-prev {
+            left: 0;
+        }
+        .carousel-control-next {
+            right: 0;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .logo {
+            height: 80px;
+            width: auto;
+        }
+        .wancourtfr {
+            margin-left: 15px;
+            font-size: 2rem;
+            color: black;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+        }
+        .banner {
+            background-color: #343a40;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+        body {
+            background-color: #ccffcc;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+            padding: 20px 0;
+            flex: 1;
+        }
+        .footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .footer-content .col {
+            flex: 1 1 250px;
+            margin-bottom: 20px;
+        }
+        .footer-content .col h5 {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .footer-content .col ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .footer-content .col ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .footer-content .col ul li a:hover {
+            color: #c4c4c4;
+        }
+        .social-icons {
+            margin-top: 10px;
+        }
+        .social-icons a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .social-icons a:hover {
+            color: #c4c4c4;
+        }
+        .footer-bottom {
+            margin-top: 20px;
+            padding-top: 10px;
+            border-top: 1px solid #555;
+        }
+        .navbar {
+            background-color: #343a40;
+            color: #fff;
+            padding: 10px 0;
+            border-bottom: 2px solid #555;
+        }
+        .container-nav {
+            width: 90%;
+            margin: auto;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .navbar-brand {
+            font-family: 'Arial Black', sans-serif;
+            font-size: 1.5rem;
+            color: #fff;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+        .navbar-nav {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .nav-item {
+            margin-left: 15px;
+        }
+        .nav-link {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            transition: background-color 0.2s;
+        }
+        .nav-link:hover {
+            background-color: #555;
+        }
+        @media (max-width: 768px) {
+            .carousel-inner {
+                height: 250px;
+            }
+            .logo {
+                height: 60px;
+            }
+            .wancourtfr {
+                font-size: 1.5rem;
+                margin-left: 0;
+            }
+            .container {
+                width: 95%;
+            }
+            .container-nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            .navbar-nav {
+                flex-direction: column;
+            }
+            .nav-item {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+    <script>
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.carousel-item');
+            slides.forEach((slide, i) => {
+                if (i === index) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+        }
+
+        function nextSlide() {
+            const slides = document.querySelectorAll('.carousel-item');
+            currentIndex = (currentIndex + 1) % slides.length;
+            showSlide(currentIndex);
+        }
+
+        function prevSlide() {
+            const slides = document.querySelectorAll('.carousel-item');
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            showSlide(currentIndex);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showSlide(currentIndex);
+            setInterval(nextSlide, 10000); // Change de diapositive toutes les 10 secondes
+        });
+    </script>
+</head>
+<body>
+<nav class="navbar">
+    <div class="container-nav">
+        <a class="navbar-brand" href="{{ path('app_base') }}">Wancourt</a>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('app_journal') }}">Journal</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('app_mairie') }}">Mairie</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('app_education') }}">Education</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('app_vie_pratique') }}">Vie Pratique</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('app_vie_associative') }}">Vie Associative</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('app_ccas') }}">CCAS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('app_hier_jadis') }}">Hier et Jadis</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('app_location_des_salles') }}">Location de Salle</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="logo-container">
+    <img src="{{ asset('img/blason.png') }}" alt="Logo" class="logo">
+    <a href="{{ path('app_base') }}" class="wancourtfr">𝓦𝓪𝓷𝓬𝓸𝓾𝓻𝓽.𝒇𝓻</a>
+</div><br>
+
+<div class="carousel-container mt-5">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{{ asset('img/mairie.JPG') }}" alt="Slide 1">
+        </div>
+        <div class="carousel-item">
+            <img src="{{ asset('img/ecole.JPG') }}" alt="Slide 2">
+        </div>
+        <div class="carousel-item">
+            <img src="{{ asset('img/monuments_morts01.JPG') }}" alt="Slide 3">
+        </div>
+        <div class="carousel-item">
+            <img src="{{ asset('img/salle_association.JPG') }}" alt="Slide 4">
+        </div>
+        <div class="carousel-item">
+            <img src="{{ asset('img/sdf.JPG') }}" alt="Slide 5">
+        </div>
+        <div class="carousel-item">
+            <img src="{{ asset('img/aire_jeu_sdf.JPG') }}" alt="Slide 6">
+        </div>
+        <div class="carousel-item">
+            <img src="{{ asset('img/eglise.JPG') }}" alt="Slide 7">
+        </div>
+    </div>
+    <button class="carousel-control-prev" onclick="prevSlide()">&#10094;</button>
+    <button class="carousel-control-next" onclick="nextSlide()">&#10095;</button>
+</div>
+
+<div class="container">
+    <!-- Votre contenu ici -->
+</div>
+
+<footer class="footer mt-auto">
+    <div class="container">
+        <div class="footer-content">
+            <div class="col">
+                <h5>Contact</h5>
+                <p>
+                    Mairie de Wancourt<br>
+                    3 Rue de Picardie<br>
+                    62128 Wancourt, France<br>
+                    Téléphone : 03 21 48 15 86<br>
+                    Email : mairie@wancourt.fr
+                </p>
+            </div>
+            <div class="col">
+                <h5>Liens Utiles</h5>
+                <ul>
+                    <li><a href="{{ path('app_base') }}">Accueil</a></li>
+                    <li><a href="{{ path('app_journal') }}">Journal</a></li>
+                    <li><a href="{{ path('app_mairie') }}">Mairie</a></li>
+                    <li><a href="{{ path('app_education') }}">Education</a></li>
+                    <li><a href="{{ path('app_vie_pratique') }}">Vie Pratique</a></li>
+                    <li><a href="{{ path('app_vie_associative') }}">Vie Associative</a></li>
+                    <li><a href="{{ path('app_ccas') }}">CCAS</a></li>
+                    <li><a href="{{ path('app_ccas') }}">Hier et Jadis</a></li>
+                    <li><a href="{{ path('app_location_des_salles') }}">Location des salles</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h5>Suivez-nous</h5>
+                <div class="social-icons">
+                    <a href="#">Facebook</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            &copy; 2024 Mairie de Wancourt. Tous droits réservés.
+        </div>
+    </div>
+</footer>
+</body>
+</html>
+

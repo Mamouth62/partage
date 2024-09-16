@@ -1,0 +1,104 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wancourt Journal -
+{% endblock %}
+
+{% block stylesheets %}
+	<style>
+		.img-small {
+			width: 100%;
+			max-width: 200px;
+			height: 150px;
+			object-fit: cover;
+		}
+		.table td {
+			vertical-align: middle;
+		}
+		.mt-auto {
+			margin-top: auto;
+		}
+	</style>
+{% endblock %}
+
+{% block body %}
+	<div class="container-fluid mt-5">
+		<h1 class="headline text-primary">Wancourt Journal</h1>
+		<p class="mb-4 text-center">Cliquez sur l'article de votre choix pour lire le résumé complet.</p>
+		<div class="table-responsive">
+			<table class="table table-bordered text-center w-100">
+				<tbody>
+					<tr>
+						<td class="article-summary">
+							<div class="article-content">
+								<h2 class="h4 text-info">LOTO</h2>
+								<p>12-10-2024</p>
+								{% set img1 = 'img/loto.jpg' %}
+								<img src="{{ asset(img1) }}" alt="Image article 1" class="img-fluid my-3 img-small">
+								<div class="mt-auto">
+									<a href="{{ path('app_journal1') }}" class="btn btn-dark-blue">Lire</a>
+								</div>
+							</div>
+						</td>
+						<td class="article-summary">
+							<div class="article-content">
+								<h2 class="h4 text-info">WANCOURT FITNESS</h2>
+								{% set img2 = 'img/fitness.jpg' %}
+								<img src="{{ asset(img2) }}" alt="Image article 2" class="img-fluid my-3 img-small">
+								<div class="mt-auto">
+									<a href="{{ path('app_journal2') }}" class="btn btn-dark-blue">Lire</a>
+								</div>
+							</div>
+						</td>
+						<td class="article-summary">
+							<div class="article-content">
+								<h2 class="h4 text-info">ARNAQUES ET DÉMARCHAGES</h2>
+								{% set img3 = 'img/arnaque.jpg' %}
+								<img src="{{ asset(img3) }}" alt="Image article 3" class="img-fluid my-3 img-small">
+								<div class="mt-auto">
+									<a href="{{ path('app_journal3') }}" class="btn btn-dark-blue">Lire</a>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="article-summary">
+							<div class="article-content">
+								<h2 class="h4 text-info">AGENDA ÉCOLOGIQUE</h2>
+								{% set img3 = 'img/agenda_eco1.jpg' %}
+								<img src="{{ asset(img3) }}" alt="Image article 4" class="img-fluid my-3 img-small">
+								<div class="mt-auto">
+									<a href="{{ path('app_journal4') }}" class="btn btn-dark-blue">Lire</a>
+								</div>
+							</div>
+						</td>
+						<td class="article-summary">
+							<div class="article-content">
+								<h2 class="h4 text-info">INITIATION À LA DANSE</h2>
+								<p>21-09-2024</p>
+								{% set img3 = 'img/danse.JPG' %}
+								<img src="{{ asset(img3) }}" alt="Image article 4" class="img-fluid my-3 img-small">
+								<div class="mt-auto">
+									<a href="{{ path('app_journal5') }}" class="btn btn-dark-blue">Lire</a>
+								</div>
+								
+							</div>
+						</td>
+						<td class="article-summary">
+							<div class="article-content">
+								<h2 class="h4 text-info">MÉTIER PÂTISSIER</h2>
+								{% set img3 = 'img/patissier.jpg' %}
+								<img src="{{ asset(img3) }}" alt="Image article 4" class="img-fluid my-3 img-small">
+								<div class="mt-auto">
+									<a href="{{ path('app_journal6') }}" class="btn btn-dark-blue">Lire</a>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="container mt-5 text-center">
+		<a href="{{ path('app_base') }}" class="btn btn-dark-blue mb-4">Retour à la Page Principale</a>
+	</div>
+{% endblock %}

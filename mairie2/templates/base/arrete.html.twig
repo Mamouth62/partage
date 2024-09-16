@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wancourt Mairie -{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        body {
+            background: url('{{ asset('img/mairie.JPG') }}') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .content-wrapper {
+            background-color: rgba(255, 255, 255, 0.85); 
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px; 
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            background-color: rgba(255, 255, 255, 0.85); 
+        }
+
+        .table td {
+            text-align: center;
+            vertical-align: middle;
+            border: 1px solid #ddd;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.85); 
+        }
+
+        .headline {
+            color: rgba(51, 51, 51, 0.8); 
+        }
+
+        .lead {
+            color: rgba(51, 51, 51, 0.8); 
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <div class="container"><br><br>
+        <div class="content-wrapper">
+            <h1 class="mb-4 text-center">ARRÊTÉS COMMUNAUX</h1>
+            <p class="text-center">Cliquez sur l'article de votre choix pour lire le résumé complet.</p>
+            <div class="table-responsive">
+                <table class="table table-bordered text-center">
+                    <tbody>
+                        <tr>
+                            <td class="article-summary">
+                                <h2 class="h4">Arrêtés Communaux Permanents</h2>
+                                <a href="{{ path('app_arrete_communaux_permanent') }}" class="btn btn-dark-blue mb-4">Voir</a>
+                            </td>
+                            <td class="article-summary">
+                                <h2 class="h4">Arrêtés Communaux Ponctuels</h2>
+                                <a href="{{ path('app_arrete_communaux_ponctuel') }}" class="btn btn-dark-blue mb-4">Voir</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5 text-center">
+        <a href="{{ path('app_mairie') }}" class="btn btn-dark-blue mb-4">Retour à la Mairie</a>
+    </div>
+{% endblock %}
+
+
+

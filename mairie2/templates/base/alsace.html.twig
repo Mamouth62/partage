@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wancourt - Salle des associations rue d'Alsace
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<style>
+		body {
+			background: url('{{ asset('img//salle_association.JPG') }}') no-repeat center center fixed;
+			background-size: cover;
+		}
+
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+		}
+
+		.content-wrapper {
+			background-color: rgba(255, 255, 255, 0.85);
+			padding: 20px;
+			border-radius: 10px;
+			margin-top: 20px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+
+		.text-center {
+			text-align: center;
+			margin-bottom: 30px;
+		}
+		.img-fluid {
+			max-width: 100%;
+			height: auto;
+			display: block;
+			margin: 0 auto 15px;
+		}
+	</style>
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-5">
+		<div class="content-wrapper">
+			<h1 class="mb-4 text-center">Salle des associations rue d'Alsace</h1>
+			<div class="text-center">
+				<h5>Située derrière l'église, la salle des associations comprend un parking de 13 places et une aire de jeux pour jeunes enfants.</h5>
+				<br>
+				<h5>Location réservée<h1>aux habitants de Wancourt :</h1>
+				</h5><br>
+				<p>75 € par jour, comprenant la vaisselle et l'électricité.</p>
+				<p>2 chèques de caution sont demandés à la remise des clés :</p>
+				<ul>
+					- 300 € pour la caution principale<br>
+					- 30 € pour la caution ménage
+				</ul>
+			</div>
+
+			<div class="text-center">
+				{% set img = 'img/salle_association.JPG' %}
+				<img src="{{ asset(img) }}" class="img-fluid">
+				<h5>Salle des associations</h5>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4 mb-4 text-center">
+					{% set img1 = 'img/cuisine_alsace.jpg' %}
+					<img src="{{ asset(img1) }}" class="img-fluid">
+					<h5>Cuisine</h5>
+				</div>
+				<div class="col-md-4 mb-4 text-center">
+					{% set img2 = 'img/entree_alsace.jpg' %}
+					<img src="{{ asset(img2) }}" class="img-fluid">
+					<h5>Entrée de la salle</h5>
+				</div>
+				<div class="col-md-4 mb-4 text-center">
+					{% set img3 = 'img/panoramique_alsace.jpg' %}
+					<img src="{{ asset(img3) }}" class="img-fluid">
+					<h5>Panoramique de la salle</h5>
+				</div>
+			</div>
+			<div class="container mt-5 text-center">
+				<a href="{{ path('app_location_des_salles') }}" class="btn btn-dark-blue mb-4">Retour à la Location de Salle</a>
+			</div>
+		</div><br>
+	</div>
+</div>{% endblock %}

@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wancourt - CCAS
+{% endblock %}
+{% block stylesheets %}
+	{{ parent() }}
+	<style>
+		body {
+			background: url('{{ asset('img/mairie.JPG') }}') no-repeat center center fixed;
+			background-size: cover;
+		}
+
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+		}
+
+		.content-wrapper {
+			background-color: rgba(255, 255, 255, 0.85);
+			padding: 20px;
+			border-radius: 10px;
+			margin-top: 20px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+	</style>
+{% endblock %}
+
+
+{% block body %}
+	<div class="container mt-5">
+		<div class="content-wrapper">
+			<h1 class="headline text-primary">Centre Communal d'Action Sociale (CCAS)</h1>
+			<p class="lead mb-4 text-center">Cliquez sur l'article de votre choix pour lire le résumé complet.</p>
+
+			<div class="row">
+				<div class="col-md-6 mb-4">
+					<div class="card">
+						<div class="card-body">
+							<h2 class="h4">Aides Ponctuelles</h2>
+							<p class="card-text">Découvrez les aides ponctuelles proposées par le CCAS pour les habitants de Wancourt.</p>
+							<a href="{{ path('app_ccas_aides_ponctuelles') }}" class="btn btn-dark-blue mb-4">Voir plus</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-6 mb-4">
+					<div class="card">
+						<div class="card-body">
+							<h2 class="h4">Pass Jeunes</h2>
+							<p class="card-text">Informations sur le Pass Jeunes, un programme destiné aux jeunes de la commune.</p>
+							<a href="{{ path('app_ccas_pass_jeunes') }}" class="btn btn-dark-blue mb-4">Voir plus</a>
+						</div>
+					</div>
+				</div>
+				<div class="container mt-5 text-center">
+					<a href="{{ path('app_base') }}" class="btn btn-dark-blue mb-4">Retour à la Page Principale</a>
+				</div>
+			</div>
+		</div>
+	{% endblock %}

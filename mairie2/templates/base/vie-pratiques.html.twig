@@ -1,0 +1,141 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wancourt - Vie Pratique
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<style>
+		body {
+			background: url('{{ asset('img/aire_jeu_sdf.JPG') }}') no-repeat center center fixed;
+			background-size: cover;
+		}
+
+		.container {
+			max-width: 1500px;
+			margin: 0 auto;
+		}
+
+		.content-wrapper {
+			background-color: rgba(255, 255, 255, 0.85);
+			padding: 20px;
+			border-radius: 10px;
+			margin-top: 20px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+
+		h1,
+		h2,
+		h3 {
+			color: rgba(51, 51, 51, 0.8);
+		}
+
+		.text-center {
+			text-align: center;
+		}
+
+		.img-fluid {
+			max-width: 100%;
+			height: auto;
+		}
+
+		ul,
+
+		a {
+			color: #007bff;
+			text-decoration: none;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		.table td {
+			text-align: center;
+			vertical-align: middle;
+			border: 1px solid #ddd;
+			padding: 20px;
+			background-color: rgba(255, 255, 255, 0.7);
+		}
+	</style>
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-5">
+		<div class="content-wrapper">
+			<h1 class="headline text-primary">Vie Pratique</h1>
+			<p class="lead mb-4 text-center">Cliquez sur l'article de votre choix pour lire le résumé complet.</p>
+
+			<div class="table-responsive">
+				<table class="table table-bordered">
+					<tbody>
+						<tr>
+							<td class="article-summary">
+								<h2 class="h4">CARTE NATIONALE D'IDENTITÉ</h2>
+								<p>Informations sur la carte d'identité.</p>
+								<div class="btn-center">
+									<a href="{{ path('app_carte_nationale_identite') }}" class="btn btn-dark-blue mb-4">Voir</a>
+								</div>
+							</td>
+							<td class="article-summary">
+								<h2 class="h4">CERTIFICAT</h2>
+								<p>Copie, législation et conservation de documents.</p>
+								<div class="btn-center">
+									<a href="{{ path('app_certificat') }}" class="btn btn-dark-blue mb-4">Voir</a>
+								</div>
+							</td>
+							<td class="article-summary">
+								<h2 class="h4">ÉLECTIONS</h2>
+								<p>Inscription sur la liste électorale.</p>
+								<div class="btn-center">
+									<a href="{{ path('app_election') }}" class="btn btn-dark-blue mb-4">Voir</a>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="article-summary">
+								<h2 class="h4">ETAT CIVIL</h2>
+								<p>Actes de naissance, décès, etc.</p>
+								<div class="btn-center">
+									<a href="{{ path('app_etat_civil') }}" class="btn btn-dark-blue mb-4">Voir</a>
+								</div>
+							</td>
+							<td class="article-summary">
+								<h2 class="h4">INFOS SMAV ET ARTIS</h2>
+								<div class="btn-center">
+									<a href="{{ path('app_planning') }}" class="btn btn-dark-blue mb-4">Voir</a>
+								</div>
+							</td>
+							<td class="article-summary">
+								<h2 class="h4">PASSEPORT BIOMÉTRIQUE</h2>
+								<p>Informations sur le passeport biométrique.</p>
+								<div class="btn-center">
+									<a href="{{ path('app_passeport_biometrique') }}" class="btn btn-dark-blue mb-4">Voir</a>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="article-summary">
+								<h2 class="h4">RECENSEMENT 16 ANS</h2>
+								<p>Recensement JDC et service national.</p>
+								<div class="btn-center">
+									<a href="{{ path('app_armee') }}" class="btn btn-dark-blue mb-4">Voir</a>
+								</div>
+							</td>
+                            <td class="article-summary">
+								<h2 class="h4">INFOS UTILES</h2>
+								<p>Retrouvez ici les infos utiles</p>
+								<div class="btn-center">
+									<a href="{{ path('app_info_utiles') }}" class="btn btn-dark-blue mb-4">Voir</a>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="container mt-5 text-center">
+				<a href="{{ path('app_base') }}" class="btn btn-dark-blue mb-4">Retour à la Page Principale</a>
+			</div>
+		</div><br><br>
+	</div>
+{% endblock %}

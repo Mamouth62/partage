@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wancourt - {% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        body {
+            background: url('{{ asset('img/mairie.JPG') }}') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content-wrapper {
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <div class="content-wrapper">
+            <h1 class="headline text-primary">Hier, Jadis et Aujourd'hui</h1>
+            <p class="lead mb-4 text-center">Découvrez l'évolution de votre commune</p>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="h4">Hier</h2>
+                            <a href="{{ path('app_hier') }}" class="btn btn-dark-blue mb-4">Voir plus</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="h4">Aujourd'hui</h2>
+                            <a href="{{ path('app_aujourdhui') }}" class="btn btn-dark-blue mb-4">Voir plus</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="h4">A Venir</h2>
+                            <a href="#" class="btn btn-dark-blue mb-4">Voir plus</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="h4">A Venir</h2>
+                            <a href="#" class="btn btn-dark-blue mb-4">Voir plus</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="{{ path('app_base') }}" class="btn btn-dark-blue mb-4">Retour à la Page Principale</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

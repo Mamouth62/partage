@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wancourt - Hier{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        body {
+            background: url('{{ asset('img/mairie.JPG') }}') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content-wrapper {
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .content-wrapper img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <div class="content-wrapper">
+            <h1 class="mb-4 text-center">Hier</h1>
+			    {% set img = 'img/ancienne_mairie.jpg' %}
+	<div class="text-center">
+		<img src="{{ asset(img) }}">
+	</div>
+            <div class="container mt-5 text-center d-flex justify-content-between">
+                <a href="{{ path('app_hier_jadis') }}" class="btn btn-dark-blue mb-4">Retour à la page Hier, Jadis et Aujourd'hui</a>
+                <button onclick="window.print()" class="btn btn-dark-blue mb-4">Imprimer</button>
+            </div>
+        </div>
+    </div>
+{% endblock %}
