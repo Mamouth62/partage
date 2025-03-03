@@ -1,54 +1,129 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Wancourt Mairie -
-{% endblock %}
+{% block title %}Wancourt Mairie - {% endblock %}
 
+{% block stylesheets %}
+    {{ parent() }} {# Appel du bloc stylesheets du template parent #}
+
+    <style>
+        /* Styles pour le fond d'écran et le conteneur principal */
+        body {
+            background: url('{{ asset('img/mairie.JPG') }}') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        /* Styles pour l'enveloppe de contenu */
+        .content-wrapper {
+            background-color: rgba(255, 255, 255, 0.85); /* Fond blanc semi-transparent */
+            padding: 20px; /* Padding intérieur */
+            border-radius: 10px; /* Coins arrondis */
+            margin-top: 20px; /* Marge supérieure */
+        }
+
+        /* Styles pour limiter la largeur du contenu et le centrer */
+        .container {
+            max-width: 800px; /* Largeur maximale */
+            margin: 0 auto; /* Centrage horizontal */
+            padding: 0 15px; /* Padding intérieur */
+        }
+
+        /* Styles pour la table */
+        .table {
+            width: 100%; /* Largeur de la table */
+            border-collapse: collapse; /* Bordures collapse */
+            margin-bottom: 30px; /* Marge inférieure */
+        }
+
+        /* Styles pour les cellules de la table */
+        .table td {
+            text-align: center; /* Centrage du texte */
+            vertical-align: middle; /* Alignement vertical du texte */
+            border: 1px solid #ddd; /* Bordure grise */
+            padding: 20px; /* Padding intérieur */
+            background-color: rgba(255, 255, 255, 0.85); /* Fond blanc semi-transparent */
+        }
+
+        /* Styles pour les titres des cellules de la table */
+        .table h2 {
+            margin-bottom: 20px; /* Marge inférieure */
+            color: rgba(51, 51, 51, 0.8); /* Couleur du texte grisé */
+        }
+
+        /* Styles pour les paragraphes des cellules de la table */
+        .table p {
+            color: rgba(51, 51, 51, 0.8); /* Couleur du texte grisé */
+        }
+
+        /* Styles pour centrer horizontalement les boutons */
+        .btn-center {
+            display: flex; /* Affichage flex */
+            justify-content: center; /* Centrage horizontal */
+        }
+
+        /* Styles pour les boutons à l'intérieur de .btn-center */
+        .btn-center .btn {
+            margin: 0 auto; /* Centrage horizontal */
+        }
+
+        /* Styles pour les titres principaux */
+        .headline {
+            color: rgba(51, 51, 51, 0.8); /* Couleur du texte grisé */
+        }
+
+        /* Styles pour les introductions */
+        .lead {
+            color: rgba(51, 51, 51, 0.8); /* Couleur du texte grisé */
+        }
+    </style>
+{% endblock %}
 {% block body %}
-	<div class="container mt-5">
-		<h1 class="mb-4">Mairie de Wancourt</h1>
-		<p class="mb-4">Cliquez sur l'article de votre choix pour lire le résumé complet.</p>
-		<div class="table-responsive">
-			<table class="table table-bordered">
-				<tbody>
-					<tr>
-						<td class="article-summary">
-							<h2 class="h4">AGENDA</h2>
-							<p>Ceci est un résumé de l'article 1.</p>
-							<a href="{{ path('app_agenda') }}" class="btn btn-info">Voir</a>
-						</td>
-						<td class="article-summary">
-							<h2 class="h4">HORAIRES</h2>
-							<p>Ceci est un résumé de l'article 2.</p>
-							<a href="{{ path('app_horaire') }}" class="btn btn-info">Voir</a>
-						</td>
-						<td class="article-summary">
-							<h2 class="h4">INFORMATIONS</h2>
-							<p>Ceci est un résumé de l'article 3.</p>
-							<a href="{{ path('app_info') }}" class="btn btn-info">Voir</a>
-						</td>
-					</tr>
-					<tr>
-						<td class="article-summary">
-							<h2 class="h4">COMMISSIONS DELEGATIONS</h2>
-							<p>Ceci est un résumé de l'article 4.</p>
-							<a href="{{ path('app_commissions_et_delegations') }}" class="btn btn-info">Voir</a>
-						</td>
-						<td class="article-summary">
-							<h2 class="h4">ARRETES COMMUNAUX</h2>
-							<p>Ceci est un résumé de l'article 5.</p>
-							<a href="{{ path('app_arrete_communaux') }}" class="btn btn-info">Voir</a>
-						</td>
-						<td class="article-summary">
-							<h2 class="h4">CIMETIERE</h2>
-							<p>Ceci est un résumé de l'article 6.</p>
-							<a href="{{ path('app_cimetiere') }}" class="btn btn-info">Voir</a>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
-	<div class="container mt-5">
-		<a href="{{ path('app_base') }}" class="btn btn-dark-blue mb-4">Retour à la Page Principale</a>
-	</div>
+    <div class="container"><br><br> {# Conteneur principal avec Bootstrap pour centrer le contenu #}
+        <div class="content-wrapper"> {# Enveloppe de contenu avec fond blanc semi-transparent #}
+            <h1 class="headline text-primary">Mairie de Wancourt</h1> {# Titre principal de la page #}
+            <p class="lead mb-4 text-center">Cliquez sur l'article de votre choix pour lire le résumé complet.</p> {# Paragraphe d'introduction centré #}
+            <div class="table-responsive"> {# Conteneur réactif pour la table #}
+                <table class="table table-bordered"> {# Tableau Bootstrap avec bordures #}
+                    <tbody>
+                        <tr>
+                            <td class="article-summary">
+                                <h2 class="h4">AGENDA 2024</h2> {# Titre de l'article #}
+                                <div class="btn-center">
+                                    <a href="{{ path('app_agenda') }}" class="btn btn-dark-blue mb-4">Voir</a> {# Bouton 'Voir' avec lien vers 'app_agenda' #}
+                                </div>
+                            </td>
+                            <td class="article-summary">
+                                <h2 class="h4">ARRETES COMMUNAUX</h2> {# Titre de l'article #}
+                                <div class="btn-center">
+                                    <a href="{{ path('app_arrete_communaux') }}" class="btn btn-dark-blue mb-4">Voir</a> {# Bouton 'Voir' avec lien vers 'app_arrete_communaux' #}
+                                </div>
+                            </td>
+                            <td class="article-summary">
+                                <h2 class="h4">CIMETIERE  WANCOURT</h2> {# Titre de l'article #}
+                                <div class="btn-center">
+                                    <a href="{{ path('app_cimetiere') }}" class="btn btn-dark-blue mb-4">Voir</a> {# Bouton 'Voir' avec lien vers 'app_cimetiere' #}
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="article-summary">
+                                <h2 class="h4">COMMISSIONS DELEGATIONS</h2> {# Titre de l'article #}
+                                <div class="btn-center">
+                                    <a href="{{ path('app_commissions_et_delegations') }}" class="btn btn-dark-blue mb-4">Voir</a> {# Bouton 'Voir' avec lien vers 'app_commissions_et_delegations' #}
+                                </div>
+                            </td>
+                            <td class="article-summary">
+                                <h2 class="h4">HORAIRES-INFORMATIONS</h2> {# Titre de l'article #}
+                                <div class="btn-center">
+                                    <a href="{{ path('app_info') }}" class="btn btn-dark-blue mb-4">Voir</a> {# Bouton 'Voir' avec lien vers 'app_info' #}
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="container mt-5 text-center"> {# Conteneur avec lien de retour centré #}
+                <a href="{{ path('app_base') }}" class="btn btn-dark-blue mb-4">Retour à la Page Principale</a> {# Lien avec bouton 'Retour à la Page Principale' #}
+            </div>
+        </div><br>
+    </div>
 {% endblock %}

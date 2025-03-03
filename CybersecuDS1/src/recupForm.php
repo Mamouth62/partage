@@ -7,6 +7,7 @@ $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
 $age = filter_input(INPUT_POST, 'age', FILTER_NUMBER_INT);
 $commentaire = filter_input(INPUT_POST, 'commentaire', FILTER_SANITIZE_STRING);
 var_dump($_POST);
+echo "Nom: $nom <br /> Email: $email <br /> Age: $age <br /> Commentaire:$commentaire";
 if(empty($nom)){
     echo '<br>'.'Veuillez saisir un nom'.'</br>';
 

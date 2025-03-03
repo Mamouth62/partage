@@ -1,101 +1,161 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Wancourt -
+{% block title %}Wancourt - Salle des fêtes
 {% endblock %}
 
 {% block stylesheets %}
 	{{ parent() }}
 	<style>
 		body {
-			background-color: #f8f9fa;
-			color: #343a40;
-			font-family: 'Arial', sans-serif;
+			background: url('{{ asset('img//sdf.JPG') }}') no-repeat center center fixed;
+			background-size: cover;
 		}
-		.text-center img {
+
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+		}
+
+		.content-wrapper {
+			background-color: rgba(255, 255, 255, 0.85);
+			padding: 20px;
+			border-radius: 10px;
+			margin-top: 20px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		.text-center {
+			text-align: center;
+		}
+		.img-fluid {
 			max-width: 100%;
 			height: auto;
 			display: block;
-			margin: 0 auto;
+			margin: 0 auto 20px;
+			border-radius: 8px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		.section-title {
+			margin-top: 30px;
+			margin-bottom: 15px;
+			font-size: 1.2rem;
+			color: #343a40;
+		}
+		.pricing-list,
+		.equipment-list {
+			list-style-type: none;
+			padding-left: 0;
+		}
+		.pricing-list li,
+		.equipment-list li {
+			margin-bottom: 8px;
+		}
+		.pricing-section {
+			display: flex;
+			justify-content: center;
+		}
+		.pricing-container {
+			width: 50%;
 		}
 	</style>
 {% endblock %}
 
 {% block body %}
 	<div class="container mt-5">
-		<h1 class="mb-4">Salle des fêtes</h1>
-		<h5>La salle des fêtes de Wancourt vous accueille pour vos réceptions, mariages, baptêmes, anniversaires :<br><br>
-			une salle principale de 193 m² (capacité 120 places assises ou 150 personnes debouts)<br>
-			une salle annexe de 24 m²<br>
-			une cuisine.<br><br></h5>
-		<div class="container">
+		<div class="content-wrapper">
+			<h1 class="mb-4 text-center">Salle des fêtes</h1>
+			<div class="text-center">
+				<h4>
+					Bienvenue à la salle des fêtes de Wancourt, idéale pour vos événements spéciaux
+				</h4>
+				<p>
+					- Salle principale de 193 m² (capacité : 120 places assises ou 150 debout)<br>
+					- Salle annexe de 24 m²<br>
+					- Cuisine entièrement équipée.
+				</p>
+			</div>
+
+			<div class="text-center">
+				<img src="{{ asset('img/SDF-02.JPG') }}" class="img-fluid" alt="Salle des fêtes">
+				<h5 class="section-title">Salle des Fêtes</h5>
+			</div><br>
+
 			<div class="row">
-				<div class="col-md-6 text-center">
-					{% set img1 = 'img/salle_fete.jpg' %}
-					<img src="{{ asset(img1) }}" class="img-fluid" alt="Description de l'image 1">
+				<div class="col-md-4">
+					<img src="{{ asset('img/panoramique.jpg') }}" class="img-fluid" alt="Panoramique de la salle">
+					<h5 class="section-title">Panoramique</h5>
 				</div>
-				<div class="col-md-6 text-center">
-					{% set img2 = 'img/panoramique.jpg' %}
-					<img src="{{ asset(img2) }}" class="img-fluid" alt="Description de l'image 2">
-					<br><h4>Panoramique</h4>
+				<div class="col-md-4">
+					<img src="{{ asset('img/scene.jpg') }}" class="img-fluid" alt="Scène de la salle">
+					<h5 class="section-title">Scène</h5>
+				</div>
+				<div class="col-md-4">
+					<img src="{{ asset('img/bar.jpg') }}" class="img-fluid" alt="Bar de la salle">
+					<h5 class="section-title">Bar</h5>
+				</div>
+			</div><br>
+
+			<div class="row">
+				<div class="col-md-6">
+					<img src="{{ asset('img/cuisine.jpg') }}" class="img-fluid" alt="Cuisine de la salle">
+					<h5 class="section-title">Cuisine</h5>
+				</div>
+				<div class="col-md-6">
+					<img src="{{ asset('img/laverie.jpg') }}" class="img-fluid" alt="Laverie de la salle">
+					<h5 class="section-title">Laverie</h5>
 				</div>
 			</div>
-		</div><br>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6 text-center">
-					{% set img3 = 'img/scene.jpg' %}
-					<img src="{{ asset(img3) }}" class="img-fluid" alt="Description de l'image 1">
-					<br><h4>Scène</h4>
+
+			<div class="text-center mt-4">
+				<h4>Tarifs de location :</h4><br>
+
+				<div class="pricing-section">
+					<div class="pricing-container">
+						<h5>Pour les Wancourtois :</h5>
+						<ul class="pricing-list">
+							<li>150€ la journée</li>
+							<li>220€ le week-end</li>
+							<li>60€ l'après-midi uniquement</li>
+						</ul>
+					</div>
+					<div class="pricing-container">
+						<h5>Pour les extérieurs :</h5>
+						<ul class="pricing-list">
+							<li>380€ la journée</li>
+							<li>560€ le week-end</li>
+							<li>140€ le lunch</li>
+						</ul>
+					</div>
 				</div>
-				<div class="col-md-6 text-center">
-					{% set img4 = 'img/bar.jpg' %}
-					<img src="{{ asset(img4) }}" class="img-fluid" alt="Description de l'image 2">
-					<br><h4>Bar</h4>
-				</div>
+
+				<br><h4>Frais divers :</h4>
+				<ul class="pricing-list">
+					<li>Vaisselle couvert complet : 0,80€ par personne</li>
+					<li>Verres seuls : 0,08€ le verre</li>
+					<li>Electricité : 0,25€ par KWH</li>
+					<li>Nettoyage : 15€ de l'heure</li>
+					<li>Frais de casse et de réparation déterminés par la mairie</li>
+					<li>Deux cautions : une pour la salle et une pour le dépassement du volume sonore</li>
+					<li>Caution de la salle : 500€</li>
+					<li>Caution volume sonore : 300€</li>
+				</ul>
+
+				<br><h4>Équipements :</h4>
+				<ul class="equipment-list">
+					<li>Salle principale (193 m²) avec bar</li>
+					<li>Salle annexe, cloison amovible (24 m²)</li>
+					<li>Estrade dans la salle principale (10,5 m²)</li>
+					<li>Cuisine équipée</li>
+					<li>Arrière-cuisine avec lave-vaisselle</li>
+					<li>Vestiaire, sanitaires, hall</li>
+					<li>Pièce de rangement pour tables et chaises</li>
+					<li>Dimensions des tables : 1,20 m * 0,80 m</li>
+				</ul>
+
+				<p>Réservation en Mairie.</p>
 			</div>
-		</div><br>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6 text-center">
-					{% set img5 = 'img/cuisine.jpg' %}
-					<img src="{{ asset(img4) }}" class="img-fluid" alt="Description de l'image 1">
-					<br><h4>Cuisine</h4>
-				</div>
-				<div class="col-md-6 text-center">
-					{% set img6 = 'img/laverie.jpg' %}
-					<img src="{{ asset(img5) }}" class="img-fluid" alt="Description de l'image 2">
-					<br><h4>Laverie</h4>
-				</div>
-			</div>
-			<h5>Tarifs de location (à titre indicatif)<br><br>
-			Pour les Wancourtois :<br><br>	
-			150€ la journée,<br>
-			220€ le Week-end<br>
-			60€ l'après-midi uniquement <br><br>
-			Pour les extérieurs :<br><br>
-			380€ la journée,<br>
-			560€ le Week-end,<br>
-			140€ le lunch.<br><br>
-			Frais divers :<br><br>
-			Vaisselle couvert complet, 0,80€ par personne<br>
-			Verres seuls : 0,08€ le verre<br>
-			Electricité : 0,25€ par KWH<br>
-			Nettoyage : 15€ de l'heure<br>
-			Caution : 500€<br>
-			Frais de casse et de réparation déterminés par la mairie.<br><br>
-		    Etablissement de deux cautions une pour la salle et l'autre pour le dépassement du volume sonore.<br><br><br>
-			Equipements<br><br>
-		    Salle principale  (193 m²) avec bar<br>
-			Salle annexe, cloison amovible (24 m²)<br>
-			Estrade dans la salle principale (10,5 m²)<br>
-			Cuisine : four électrique avec plaques de gaz, micro-onde,<br>
-			               3 frigos, table inox, étuve et plonge congélateur bahut de 180l..<br>
-			Arrière-cuisine : lave-vaisselle<br>
-			Vestiaire, sanitaires, hall<br>
-			Pièce de rangement (tables et chaises)<br>
-			Dimensions des tables : 1,20 m * 0,80 m<br>
-			Réservation en Mairie</h5>
-            <div class="container mt-5">
+			<div class="container mt-5 text-center">
 				<a href="{{ path('app_location_des_salles') }}" class="btn btn-dark-blue mb-4">Retour à la Page Location de Salle</a>
 			</div>
-		{% endblock %}
+		</div><br>
+	</div>
+{% endblock %}

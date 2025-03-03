@@ -1,66 +1,103 @@
-{% extends 'base.html.twig' %} 
+{% extends 'base.html.twig' %}
 
 {% block title %}Wancourt Journal -
 {% endblock %}
 
+{% block stylesheets %}
+	<style>
+		.img-small {
+			width: 100%;
+			max-width: 200px;
+			height: 150px;
+			object-fit: cover;
+		}
+		.table td {
+			vertical-align: middle;
+		}
+		.mt-auto {
+			margin-top: auto;
+		}
+	</style>
+{% endblock %}
+
 {% block body %}
-	<div class="container mt-5">
-		<h1 class="mb-4">Journal</h1>
-		<p class="mb-4">Cliquez sur l'article de votre choix pour lire le résumé complet.</p>
+	<div class="container-fluid mt-5">
+		<h1 class="headline text-primary">Wancourt Journal</h1>
+		<p class="mb-4 text-center">Cliquez sur l'article de votre choix pour lire le résumé complet.</p>
 		<div class="table-responsive">
-			<table class="table table-bordered">
+			<table class="table table-bordered text-center w-100">
 				<tbody>
 					<tr>
 						<td class="article-summary">
-							<h2 class="h4">Résultats des élections européennes 2024</h2>
-							<p>Ceci est un résumé de l'article 1.</p>
-							{% set img = 'img/resultats_europeennes.jpg' %}
-								<img src="{{ asset(img) }}" alt="Image article 1" width="100">
+							<div class="article-content">
+								<h2 class="h4 text-info">Le 16 Juin Marche et VTT</h2>
+								<p>Rejoignez-nous pour une journée de marche et de VTT le 16 juin.</p>
+								{% set img1 = 'img/vtt.jpg' %}
+								<img src="{{ asset(img1) }}" alt="Image article 1" class="img-fluid my-3 img-small">
+								<div class="mt-auto">
+									<a href="{{ path('app_marche') }}" class="btn btn-dark-blue">Lire</a>
+								</div>
 							</div>
-							<br><a href="{{path('app_election2024')}}" class="btn btn-info">Lire</a>
 						</td>
 						<td class="article-summary">
-							<h2 class="h4">COURSE CYCLISTE LE 16 MAI</h2>
-							<p>Ceci est un résumé de l'article 2.</p><br><br><br><br>
-							<a href="#" class="btn btn-info">Lire</a>
+							<div class="article-content">
+								<h2 class="h4 text-info">13-14-15 Juillet Ducasse</h2>
+								<p>Venez célébrer avec nous lors de la Ducasse les 13, 14 et 15 juillet.</p>
+								{% set img2 = 'img/ducasse5.PNG' %}
+								<img src="{{ asset(img2) }}" alt="Image article 2" class="img-fluid my-3 img-small">
+								<div class="mt-auto">
+									<a href="{{ path('app_ducasse') }}" class="btn btn-dark-blue">Lire</a>
+								</div>
+							</div>
 						</td>
 						<td class="article-summary">
-							<h2 class="h4">1 JUIN BROCANTE NOUVEAU TRACE</h2>
-							<p>Ceci est un résumé de l'article 3.</p>
-							{% set img3 = 'img/brocante_page.PNG' %}
-								<img src="{{ asset(img3) }}" alt="Image article 1" width="100">
-							</div><br>
-							<a href="{{path('app_brocante')}}" class="btn btn-info">Lire</a>
+							<div class="article-content">
+								<h2 class="h4 text-info">BULLETIN ARS EAU</h2>
+								<p>Qualité de l'eau sur Wancourt en 2024</p>
+								{% set img3 = 'img/bulletin_ars_eau.jpg' %}
+								<img src="{{ asset(img3) }}" alt="Image article 3" class="img-fluid my-3 img-small">
+								<div class="mt-auto">
+									<a href="{{ path('app_eau_ars') }}" class="btn btn-dark-blue">Lire</a>
+								</div>
+							</div>
 						</td>
 					</tr>
 					<tr>
 						<td class="article-summary">
-							<h2 class="h4">LE 6 JUIN DERNIER JOUR POUR LES IMPOTS REVENU</h2>
-							<p>Ceci est un résumé de l'article 4.</p>
-							{% set img4 = 'img/IMPOT_2023_2024.jpg' %}
-								<img src="{{ asset(img4) }}" alt="Image article 1" width="100">
-							</div><br>
-							<a href="{{ path('app_impot') }}" class="btn btn-info">Lire</a>
+							<div class="article-content">
+								<h2 class="h4 text-info">Election legislative 30 juin 2024</h2>
+								<p>Election juin 2024</p>
+								{% set img3 = 'img/election-legislative-30-juin-2024.jpg' %}
+								<img src="{{ asset(img3) }}" alt="Image article 4" class="img-fluid my-3 img-small">
+								<div class="mt-auto">
+									<a href="{{ path('app_election2024') }}" class="btn btn-dark-blue">Lire</a>
+								</div>
+							</div>
 						</td>
 						<td class="article-summary">
-							<h2 class="h4">LE 16 JUIN MARCHE ET VTT</h2>
-							<p>Ceci est un résumé de l'article 5.</p>
-							{% set img5 = 'img/vtt.jpg' %}
-								<img src="{{ asset(img5) }}" alt="Image article 1" width="100">
-							</div><br>
-							<a href="{{ path('app_marche') }}" class="btn btn-info">Lire</a>
+							<div class="article-content">
+								<h2 class="h4 text-info">Vide</h2>
+								<p>Prochain article bientôt disponible.</p>
+								<div class="mt-auto">
+									<a href="#" class="btn btn-dark-blue">Lire</a>
+								</div>
+							</div>
 						</td>
 						<td class="article-summary">
-							<h2 class="h4">13-14-15 JUILLET DUCASSE</h2>
-							<p>Ceci est un résumé de l'article 6.</p>
-							<a href="article6.html" class="btn btn-info">Lire</a>
+							<div class="article-content">
+								<h2 class="h4 text-info">Vide</h2>
+								<p>Prochain article bientôt disponible.</p>
+								<div class="mt-auto">
+									<a href="#" class="btn btn-dark-blue">Lire</a>
+								</div>
+							</div>
 						</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 	</div>
-	<div class="container mt-5">
+	<div class="container mt-5 text-center">
 		<a href="{{ path('app_base') }}" class="btn btn-dark-blue mb-4">Retour à la Page Principale</a>
 	</div>
 {% endblock %}

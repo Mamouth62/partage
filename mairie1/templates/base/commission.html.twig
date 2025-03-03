@@ -1,22 +1,159 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Wancourt Mairie-
+{% block title %}Wancourt Mairie -{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        body {
+            background: url('{{ asset('img/mairie.JPG') }}') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .container-background {
+            background-color: rgba(255, 255, 255, 0.8); 
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        .table th, .table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        .table th {
+            background-color: #343a40;
+            color: white;
+        }
+        .table tbody tr:nth-child(odd) {
+            background-color: #f2f2f2;
+        }
+        .table tbody tr:hover {
+            background-color: #e9ecef;
+        }
+        .delegation-container {
+            margin-top: 50px;
+        }
+        .delegation-title {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            color: #007bff;
+        }
+        .delegation-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .delegation-list li {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+    </style>
 {% endblock %}
 
 {% block body %}
-	<div class="container mt-5">
-		<h1 class="mb-4">Commissions et délégations</h1>
-		{% set img = 'img/202304_COMMISSIONS_COMMUNALES1.jpg' %}
-		<br>
-		<div class="text-center">
-			<h4>COMMISSIONS COMMUNALES<br><br>
-				Le maire, Eric DUFLOT, est Président de toutes les commissions</h4><br>
-			<img src="{{ asset(img) }}"><br>
-			<h4>DELEGATIONS</h4><br>
-			{% set img = 'img/202304_COMMISSIONS_COMMUNALES2.jpg' %}
-			<img src="{{ asset(img) }}">
-		</div>
-		<div class="container">
-			<a href="{{path('app_mairie')}}" class="btn btn-dark-blue mb-4">Retour à la page mairie</a>
-		</div>
-	{% endblock %}
+    <div class="container mt-5 container-background">
+        <h1 class="mb-4 text-center">Commissions et délégations</h1>
+        <div class="table-container mt-5">
+            <div class="text-center">
+                <h2>COMMISSIONS COMMUNALES<br><br>
+                    Le maire, Eric DUFLOT, est Président de toutes les commissions</h2><br>
+                <h3>Tableau des Commissions Communales<br>11/04/2023</h3><br>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Commission</th>
+                            <th>Vice-Président</th>
+                            <th>Membres</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>BUDGET</td>
+                            <td>THELLIEZ Martine</td>
+                            <td>LETIENNE Philippe<br>
+                                DUBOS Frédéric<br>
+                                LEBLANC André<br>
+                                LECLEIRE Claude<br>
+                                EMAMBACCUS Zinnat</td>
+                        </tr>
+                        <tr>
+                            <td>CCAS-SANTE-RAM</td>
+                            <td>THELLIEZ Martine</td>
+                            <td>LEBLANCHE Isabelle<br>
+                                MONTAGNE Cathy<br>
+                                LE STRAT Sandrine</td>
+                        </tr>
+                        <tr>
+                            <td>COMMUNICATIONS</td>
+                            <td>DUBOS Frédéric</td>
+                            <td>LETIENNE Philippe<br>
+                                LEBLANCHE Isabelle<br>
+                                TEMPEZ Dominique<br>
+                                LECLEIRE Claude</td>
+                        </tr>
+                        <tr>
+                            <td>LOISIRS-SPORT</td>
+                            <td>LEBLANCHE Isabelle</td>
+                            <td>THELLIEZ Martine<br>
+                                LETIENNE Philippe<br>
+                                DUBOS Frédéric<br>
+                                TEMPEZ Dominique<br>
+                                EMAMBACCUS Zinnat<br>
+                                LE STRAT Sandrine</td>
+                        </tr>
+                        <tr>
+                            <td>TRAVAUX BATIMENT</td>
+                            <td>LETIENNE Philippe</td>
+                            <td>DUBOS Frédéric<br>
+                                THELLIEZ Martine<br>
+                                DE FRESCHI Michel<br>
+                                LEBLANC André<br>
+                                TEMPEZ Dominique<br>
+                                COURTIN Patrice</td>
+                        </tr>
+                        <tr>
+                            <td>TRAVAUX VOIRIES</td>
+                            <td>LETIENNE Philippe</td>
+                            <td>DUBOS Frédéric</td>
+                        </tr>
+                        <tr>
+                            <td>URBANISMES</td>
+                            <td>TEMPEZ Dominique</td>
+                            <td>THELLIEZ Martine<br>
+                            LETIENNE Philippe</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="delegation-container">
+            <h2 class="delegation-title">ADJOINTS/CONSEILLERS DÉLÉGUÉS</h2>
+            <ul class="delegation-list">
+                <li><strong>1ère adjointe:</strong> THELLIEZ Martine - BUDGET-SANTE-SOCIAL-ENFANCE</li>
+                <li><strong>2ème adjoint:</strong> LETIENNE Philippe - TRAVAUX-BATIMENTS - VOIRIE</li>
+                <li><strong>3ème adjoint:</strong> DUBOS Frédéric - COMMUNICATION</li>
+                <li><strong>Conseiller délégué:</strong> LEBLANC André - AGRICULTURE</li>
+                <li><strong>Conseillère déléguée:</strong> LEBLANCHE Isabelle - CULTURE - TOURISME - LOISIRS - EVENEMENTIEL</li>
+                <li><strong>Conseiller délégué:</strong> DE FRESCHI Michel - SECURITE - HABITAT</li>
+                <li><strong>Conseillère déléguée:</strong> TEMPEZ Dominique - URBANISME</li>
+            </ul>
+        </div>
+        <div class="text-center mt-5">
+            <a href="{{ path('app_mairie') }}" class="btn btn-dark-blue mb-4">Retour à la Page Mairie</a>
+        </div>
+    </div><br>
+{% endblock %}
+
+

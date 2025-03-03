@@ -4,37 +4,48 @@
 {% endblock %}
 
 {% block stylesheets %}
-	{{ parent() }}
 	<style>
 		body {
-			background-color: #f8f9fa;
-			color: #343a40;
-			font-family: 'Arial', sans-serif;
+			background: url('{{ asset('img/sdf.JPG') }}') no-repeat center center fixed;
+			background-size: cover;
 		}
-		.text-center img {
-			max-width: 100%;
-			height: auto;
-			display: block;
+
+		.container {
+			max-width: 800px;
 			margin: 0 auto;
+		}
+
+		.content-wrapper {
+			background-color: rgba(255, 255, 255, 0.85);
+			padding: 20px;
+			border-radius: 10px;
+			margin-top: 20px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 		}
 	</style>
 {% endblock %}
 
 {% block body %}
 	<div class="container mt-5">
-		<h1 class="mb-4">Sophrologie</h1>
-		<h5>Pour découvrir et pratique la sophrologie de groupe<br><br>
-			 
-			
-			Personne à contacter : Valérie Maître 06.60.99.61.97<br><br>
-			
-			Tous les lundis à 18h à l'école maternelle<br>
-			et en dehors des vacances scolaires.<br><br>
-			
-			Tarif Wancourtois 100€ pour l'année scolaire<br>
-			Extérieur 180€ pour l'année scolaire<br><br>
-			
-			La première séance de découverte est gratuite.<br><br>
-			
-			Merci d'apporter un tapis de sport, un coussin et une couverture.</h5>
+		<div class="content-wrapper">
+			<h1 class="mb-4">Sophrologie</h1>
+			<h5>Pour découvrir et pratique la sophrologie de groupe<br><br>
+
+
+				Personne à contacter : Valérie Maître 06.60.99.61.97<br><br>
+
+				Tous les lundis à 18h à l'école maternelle<br>
+				et en dehors des vacances scolaires.<br><br>
+
+				Tarif Wancourtois 100€ pour l'année scolaire<br>
+				Extérieur 180€ pour l'année scolaire<br><br>
+
+				La première séance de découverte est gratuite.<br><br>
+
+				Merci d'apporter un tapis de sport, un coussin et une couverture.</h5>
+			<div class="container mt-5 text-center d-flex justify-content-between">
+				<a href="{{ path('app_vie_associative') }}" class="btn btn-dark-blue mb-4">Retour à la page Vie Associative</a>
+				<button onclick="window.print()" class="btn btn-dark-blue mb-4">Imprimer</button>
+			</div>
+		</div>
 	{% endblock %}

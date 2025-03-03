@@ -2,35 +2,65 @@
 
 {% block title %}Foot2Street
 {% endblock %}
-
 {% block body %}
-<thead>
-	<main class"container">
-		<section class="row">
-			<div class="col-12">
-				<h1>Bienvenue sur Foot2Street</h1>
+	<div id="carouselExample" class="carousel slide" data-ride="carousel">
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<a href="/ecommerce/categories/ligue1">
+					<img src="image/openda.jpg" class="d-block w-100" alt="Slide 1">
+				</a>
 			</div>
-			{% for category in categories %}
-				{% if category.parent == null %}
-					<div class="col-12">
-						<h2>{{ category.name}}</h2>
+			<div class="carousel-item">
+				<a href="/ecommerce/categories/pl">
+					<img src="image/l-pl.jpg" class="d-block w-100" alt="Slide 2">
+				</div>
+				<div class="carousel-item">
+					<a href="/ecommerce/categories/bundesliga">
+						<img src="image/bundes.jpg" class="d-block w-100" alt="Slide 3">
 					</div>
-				{% else %}
-					<div class="col-4">
-						<div class="card">
-							<img class="card-img-top" src="..." alt="Card image cap">
-							<div class="card-body">
-								<h3 class="card-title">{{category.name}}</h3>
-								<a href="{{path('categories_list', {slug: category.slug})}}" class="btn btn-primary">Voir les Produits</a>
+					<div class="carousel-item">
+						<a href="/ecommerce/categories/liga">
+							<img src="image/liga.jpg" class="d-block w-100" alt="Slide 4">
+						</div>
+						<div class="carousel-item">
+							<a href="/ecommerce/categories/seriea">
+								<img src="image/seria.webp" class="d-block w-100" alt="Slide 5">
+							</div>
+							<div class="carousel-item">
+								<a href="/ecommerce/categories/nations">
+									<img src="image/france.jpg" class="d-block w-100" alt="Slide 6">
+								</div>
 							</div>
 						</div>
-						<br>
-						</thead>
-					{% endif %}
-				{% endfor %}
-
-
-				<div class="col-12"></section>
-			</main>
-
-		{% endblock %}
+					{% endblock %}
+					{#{% block body %}
+					<thead>
+						<main class"container">
+							<section class="row">
+								<div class="col-12">
+									<h1>Bienvenue sur Foot2Street</h1>
+								</div>
+								{% for category in categories %}
+									{% if category.parent == null %}
+										<div class="col-12">
+											<h2>{{ category.name}}</h2>
+										</div>
+									{% else %}
+										<div class="col-4">
+											<div class="card">
+												<img class="card-img-top" src="..." alt="Card image cap">
+												<div class="card-body">
+													<h3 class="card-title">{{category.name}}</h3>
+													<a href="{{path('categories_list', {slug: category.slug})}}" class="btn btn-primary">Voir les Produits</a>
+												</div>
+											</div>
+											<br>
+											</thead>
+										{% endif %}
+									{% endfor %}
+					
+					
+									<div class="col-12"></section>
+								</main>
+					
+							{% endblock %} #}

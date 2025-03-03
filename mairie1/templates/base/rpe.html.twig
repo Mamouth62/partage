@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wancourt RPE{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        body {
+            background: url('{{ asset('img/ecole.JPG') }}') no-repeat center center fixed; 
+            background-size: cover;
+        }
+
+        .content-wrapper {
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .gallery-item img {
+            width: 70%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <div class="content-wrapper">
+            <h1 class="headline text-primary text-center">Relais Petite Enfance</h1>
+            <div class="row">
+                <div class="col-md-12 mb-4">
+                    <div class="gallery-item">
+                        <img src="{{ asset('img/rpe1.PNG') }}" class="img-fluid rounded" alt="RPE 1">
+                    </div>
+                </div>
+                <div class="col-md-12 mb-4">
+                    <div class="gallery-item">
+                        <img src="{{ asset('img/rpe2.PNG') }}" class="img-fluid rounded" alt="RPE 2">
+                    </div>
+                </div>
+                <div class="col-md-12 mb-4">
+                    <div class="gallery-item">
+                        <img src="{{ asset('img/rpe3.PNG') }}" class="img-fluid rounded" alt="RPE 3">
+                    </div>
+                </div>
+                <div class="col-md-12 mb-4">
+                    <div class="gallery-item">
+                        <img src="{{ asset('img/rpe4.PNG') }}" class="img-fluid rounded" alt="RPE 4">
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="{{ path('app_education') }}" class="btn btn-dark-blue mb-4">Retour à la Page Education</a>
+                <button onclick="window.print()" class="btn btn-dark-blue mb-4">Imprimer</button>
+            </div>
+        </div>
+    </div><br><br>
+{% endblock %}

@@ -1,0 +1,30 @@
+.jaime {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.bleu {
+    color: #2962f2;
+    opacity: 0.8;
+}
+
+.bleuPlein {
+    color: #2962f2;
+    opacity: 1;
+}
+
+.rouge {
+    color: #e62020;
+    opacity: 0.5;
+}
+
+.rougePlein {
+    color: #e62020;
+    opacity: 1;
+}

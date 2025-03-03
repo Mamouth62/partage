@@ -1,19 +1,33 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Wancourt -
+{% block title %}Wancourt - Endurance
 {% endblock %}
 
 {% block stylesheets %}
 	{{ parent() }}
 	<style>
 		body {
-			background-color: #f8f9fa;
-			color: #343a40;
-			font-family: 'Arial', sans-serif;
+			background: url('{{ asset('img/sdf.JPG') }}') no-repeat center center fixed;
+			background-size: cover;
 		}
+
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+		}
+
+		.content-wrapper {
+			background-color: rgba(255, 255, 255, 0.85);
+			padding: 20px;
+			border-radius: 10px;
+			margin-top: 20px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+
 		.text-center {
 			text-align: center;
 		}
+
 		.centered-image {
 			max-width: 100%;
 			height: auto;
@@ -25,14 +39,16 @@
 
 {% block body %}
 	<div class="container mt-5">
-		<h1 class="mb-4 text-center">Endurance de Wancourt</h1>
-		{% set img1 = 'img/endurance_24.jpg' %}
-		<img src="{{ asset(img1) }}" class="img-fluid centered-image">
-		<div class="container mt-5 text-center">
-			<a href="https://www.facebook.com/people/Wancourt-Endurance-62/100066430871737/" class="btn btn-dark-blue mb-4">Visiter notre page Facebook</a>
-		</div>
-        <div class="container">
-        <a href="{{path('app_vie_associative')}}" class="btn btn-dark-blue mb-4">Retour à la page vie associative</a>
-    </div>
-	</div>
-{% endblock %}
+		<div class="content-wrapper">
+			<h1 class="mb-4 text-center">Endurance de Wancourt</h1>
+			{% set img1 = 'img/endurance_24.jpg' %}
+			<img src="{{ asset(img1) }}" class="img-fluid centered-image">
+			<div class="container mt-5 text-center">
+				<a href="https://www.facebook.com/people/Wancourt-Endurance-62/100066430871737/" class="btn btn-dark-blue mb-4">Visiter notre page Facebook</a>
+			</div>
+			<div class="container mt-5 text-center d-flex justify-content-between">
+				<a href="{{ path('app_vie_associative') }}" class="btn btn-dark-blue mb-4">Retour à la page Vie Associative</a>
+				<button onclick="window.print()" class="btn btn-dark-blue mb-4">Imprimer</button>
+			</div>
+		</div><br><br>
+	{% endblock %}

@@ -2,7 +2,7 @@
 
 namespace App\Form;
 
-use App\Entity\Catégorie;
+use App\Entity\Categorie;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -19,13 +19,15 @@ class CategorieType extends AbstractType
         $builder
             ->add('libelle',TextType::class, ['attr' => ['class' => 'form-control'], 'label_attr' => ['class' =>
             'fw-bold']])
+            ->add('envoyer', SubmitType::class, ['attr' => ['class'=> 'btn bg-primary text-white m-4' ],
+'row_attr' => ['class' => 'text-center'],])
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Catégorie::class,
+            'data_class' => Categorie::class,
         ]);
     }
 }

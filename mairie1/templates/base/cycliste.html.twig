@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wancourt Journal-
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .text-center img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <h1 class="mb-4">COURSE CYCLISTE LE 16 MAI</h1>
+    </div>
+    <div class="container mt-5 d-flex justify-content-between">
+        <a href="{{ path('app_journal') }}" class="btn btn-dark-blue mb-4">Retour à la Page Journal</a>
+        <button onclick="window.print()" class="btn btn-dark-blue mb-4">Imprimer</button>
+    </div>
+{% endblock %}

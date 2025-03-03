@@ -1,60 +1,149 @@
 {% extends 'base.html.twig' %}
-{% block title %}Wancourt -
+
+{% block title %}Wancourt - RPI{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        body {
+            background: url('{{ asset('img/ecole.JPG') }}') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .container {
+            max-width: 1500px;
+            margin: 0 auto;
+        }
+
+        .content-wrapper {
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: rgba(51, 51, 51, 0.8);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+        }
+
+        ul, p {
+            color: rgba(51, 51, 51, 0.8);
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 {% endblock %}
 
 {% block body %}
-	<div class="container mt-5">
-		<h1 class="mb-4">RPI</h1>
-		<h5>Le RPI (Regroupement Pédagogique Interscolaire) est constitué de 5 écoles<br>
-			Wancourt  (03 21 73 25 71):  école maternelle. Toutes sections de maternelle<br>
-			Guémappe (03 21 55 01 78) :  école maternelle grande section et CP<br>
-			Héninel (03 21 60 62 31) :  CE1<br>
-			Chérisy  (03 21 73 33 01):  CE2 et CM1<br>
-			Fontaine les Croisilles (03 21 15 39 96) :  CM1 et CM2<br>
-			La cantine et la garderie qui sont gérées par l'ACGRPI (Association Cantine Garderie du Regroupement Pédagogique Intercommunal), fonctionnent pendant les périodes scolaires à la salle polyvalente de Guémappe, seuls les enfants scolarisés dans le RPI y sont acceptés.<br>
-			Contact ACGRPI   ==>  Secrétariat :  acgrpi59@gmail.com<br>
-			Cantine / garderie  03-21-48-56-80  (de 7h15 à 9h30, de 11h à 12h et de 16h30 à 18h45)<br>
-			Service comptabilité: compta.acgrpi59@gmail.com<br><br>
-			Vous trouverez ci-dessous quelques éléments d'information merci de vous référer aux pièces jointes en bas de page pour des informations plus précises.<br><br></h5>
-		<h3>La cantine</h3>
-		<h4>Tarifs 2023-2024:<h4>
-				<h5>
-					repas occasionnel : 6.20 €<br>
-					1 repas par semaine : 5.20 €<br>
-					2 repas par semaine : 5.00 €<br>
-					3 repas par semaine : 4.70 €<br>
-					4 repas par semaine : 4.60 €</h5><br>
-				<h4>Plein tarif pour le 1er enfant de la famille. Réduction de :</h4>
-				<h5>5% pour le 2ème enfant<br>
-					7% pour le 3ème enfant<br>
-					10% pour le 4ème enfant<br>
-					Toute nouvelle inscription régulière est assujettie au paiement d'une caution obligatoire de 50€ par enfant, paiement par chèque de préférence,<br><br></h5>
-				<h3>Quand faut-il réserver ?</h3>
-				<h5>La réservation de la cantine/garderie du soir se fait à la semaine ou à l'année, un planning par période vous est envoyé par mail  à retourner<br>
-					au plus tard le mercredi 12h précédent la semaine concernée soit par mail ou dans la boîte aux lettres de la mairie de Guémappe.<br>
-					Sans planning avant le mercredi 12h,votre enfant ne pourra pas bénéficier de la cantine scolaire.<br>
-					En cas de réservation hors délai, le tarif du repas exceptionnel sera appliqué lorsque cette demande est justifiée (par exemple: changement de<br>
-					planning, justificatif à nous fournir).</h5><br>
-				<h3>La Garderie</h3>
-				<h4>Tarifs :</h4>
-				<h5>3.00€ pour 1 heure. (facturé au 1/4 d'heure)<br>
-					Les mêmes réductions que pour la cantine sont appliquées.<br><br></h5>
-				<h4>Horaires :</h4>
-				<h5>Matin : de 7h15 à la rentrée des classes<br>
-					Soir : de la sortie des classes à 18h45<br>
-					Une pénalité de 5.00€ sera appliquée si l'enfant est repris en dehors de l'horaire indiqué sans avoir prévenu par téléphone ou sans motif valable.</h5><br><br>
-				{% set img = 'img/rpi.png' %}
-				<div class="text-center">
-					<img src="{{ asset(img) }}" class="img-fluid" style="max-width: 50%; height: auto;">
-				</div>
-				<h5>Documents à télécharger :</h5>
-				<p>
-					<a href="https://www.wancourt.fr/data/documents/rpi/REGLEMENT_INTERIEUR.pdf">data/documents/rpi/REGLEMENT_INTERIEUR.pdf</a><br>
-					<a href="https://www.wancourt.fr/data/documents/rpi/CONDITIONS_GENERALES_ACGRPI.pdf">data/documents/rpi/CONDITIONS_GENERALES_ACGRPI.pdf</a><br>
-					<a href="https://www.wancourt.fr/data/documents/rpi/FICHE_D_INSCRIPTION_2023_2024.pdf">data/documents/rpi/FICHE_D_INSCRIPTION_2023_2024.pdf</a>
-				</p>
-				<div class="container mt-5">
-					<a href="{{ path('app_education') }}" class="btn btn-dark-blue mb-4">Retour à la Page Education</a>
-				</div>
-			{% endblock %}
-		
+    <div class="container mt-5">
+        <div class="content-wrapper">
+            <h1 class="mb-4 text-center">RPI - Regroupement Pédagogique InterCommunal</h1>
+
+            <div class="container">
+                <h3>Écoles du RPI :</h3>
+                <ul>
+                    <li>Wancourt (03 21 73 25 71) : école maternelle</li>
+                    <li>Guémappe (03 21 55 01 78) : école maternelle grande section et CP</li>
+                    <li>Héninel (03 21 60 62 31) : CE1</li>
+                    <li>Chérisy (03 21 73 33 01) : CE2 et CM1</li>
+                    <li>Fontaine les Croisilles (03 21 15 39 96) : CM1 et CM2</li>
+                </ul>
+                <p>
+                    La cantine et la garderie, gérées par l'ACGRPI (Association Cantine Garderie du Regroupement Pédagogique Intercommunal), fonctionnent pendant les périodes scolaires à la salle polyvalente de Guémappe. Seuls les enfants scolarisés dans le RPI y sont acceptés.
+                </p>
+                <p>
+                    Contact ACGRPI : Secrétariat -
+                    <a href="mailto:acgrpi59@gmail.com">acgrpi59@gmail.com</a>
+                    <br>
+                    Cantine / garderie : 03-21-48-56-80 (de 7h15 à 9h30, de 11h à 12h et de 16h30 à 18h45)
+                    <br>
+                    Service comptabilité :
+                    <a href="mailto:compta.acgrpi59@gmail.com">compta.acgrpi59@gmail.com</a>
+                </p>
+            </div>
+
+            <div class="container mt-5">
+                <h2 class="text-center">Tarifs et réservations</h2>
+
+                <div class="container">
+                    <h3>La cantine</h3>
+                    <ul>
+                        <li>Tarifs 2023-2024 :</li>
+                        <ul>
+                            <li>Repas occasionnel : 6.20 €</li>
+                            <li>1 repas par semaine : 5.20 €</li>
+                            <li>2 repas par semaine : 5.00 €</li>
+                            <li>3 repas par semaine : 4.70 €</li>
+                            <li>4 repas par semaine : 4.60 €</li>
+                        </ul>
+                        <li>Plein tarif pour le 1er enfant de la famille. Réduction :</li>
+                        <ul>
+                            <li>5% pour le 2ème enfant</li>
+                            <li>7% pour le 3ème enfant</li>
+                            <li>10% pour le 4ème enfant</li>
+                        </ul>
+                        <li>Caution obligatoire de 50€ par enfant pour toute nouvelle inscription régulière.</li>
+                    </ul>
+
+                    <h3>Quand faut-il réserver ?</h3>
+                    <p>
+                        La réservation de la cantine/garderie du soir se fait à la semaine ou à l'année. Un planning par période vous est envoyé par courriel à retourner au plus tard le mercredi 12h précédent la semaine concernée, soit par courriel ou dans la boîte aux lettres de la mairie de Guémappe. Sans planning avant le mercredi 12h, votre enfant ne pourra pas bénéficier de la cantine scolaire. En cas de réservation hors délai, le tarif du repas exceptionnel sera appliqué lorsque cette demande est justifiée (par exemple : changement de planning, justificatif à nous fournir).
+                    </p>
+
+                    <h3>La Garderie</h3>
+                    <ul>
+                        <li>Tarifs :</li>
+                        <ul>
+                            <li>3.00€ pour 1 heure (facturé au 1/4 d'heure).</li>
+                        </ul>
+                        <li>Les mêmes réductions que pour la cantine sont appliquées.</li>
+
+                        <li>Horaires :</li>
+                        <ul>
+                            <li>Matin : de 7h15 à la rentrée des classes</li>
+                            <li>Soir : de la sortie des classes à 18h45</li>
+                        </ul>
+                        <li>Une pénalité de 5.00€ sera appliquée si l'enfant est repris en dehors de l'horaire indiqué sans avoir prévenu par téléphone ou sans motif valable.</li>
+                    </ul>
+                </div>
+
+                <div class="container mt-5 text-center">
+                    {% set img = 'img/rpi.png' %}
+                    <img src="{{ asset(img) }}" class="img-fluid" style="max-width: 50%; height: auto;">
+                </div>
+
+                <h3 class="text-center mt-4">Documents à télécharger :</h3>
+                <div class="container text-center">
+                    <p>
+                        <a href="https://www.wancourt.fr/data/documents/rpi/REGLEMENT_INTERIEUR.pdf">REGLEMENT_INTERIEUR.pdf</a><br>
+                        <a href="https://www.wancourt.fr/data/documents/rpi/CONDITIONS_GENERALES_ACGRPI.pdf">CONDITIONS_GENERALES_ACGRPI.pdf</a><br>
+                        <a href="https://www.wancourt.fr/data/documents/rpi/FICHE_D_INSCRIPTION_2023_2024.pdf">FICHE_D_INSCRIPTION_2023_2024.pdf</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="container mt-5 text-center">
+                <a href="{{ path('app_education') }}" class="btn btn-dark-blue mb-4">Retour à la Page Education</a>
+                <button onclick="window.print()" class="btn btn-dark-blue mb-4">Imprimer</button>
+            </div>
+        </div>
+    </div><br><br>
+{% endblock %}
+

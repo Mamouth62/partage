@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wancourt - CCAS
+{% endblock %}
+{% block stylesheets %}
+	{{ parent() }}
+	<style>
+		body {
+			background: url('{{ asset('img/mairie.JPG') }}') no-repeat center center fixed;
+			background-size: cover;
+		}
+
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+		}
+
+		.content-wrapper {
+			background-color: rgba(255, 255, 255, 0.85);
+			padding: 20px;
+			border-radius: 10px;
+			margin-top: 20px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+	</style>
+{% endblock %}
+
+
+{% block body %}
+	<div class="container mt-5">
+		<div class="content-wrapper">
+			<h1 class="headline text-primary">Hier et Jadis</h1>
+			<p class="lead mb-4 text-center">#</p>
+			<div class="row">
+				<div class="col-md-6 mb-4">
+					<div class="card">
+						<div class="card-body">
+							<h2 class="h4">Hier</h2>
+							<p class="card-text">#</p>
+							<a href="{{ path('app_hier') }}" class="btn btn-dark-blue mb-4">Voir plus</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 mb-4">
+					<div class="card">
+						<div class="card-body">
+							<h2 class="h4">Jadis</h2>
+							<p class="card-text">#</p>
+							<a href="{{ path('app_jadis') }}" class="btn btn-dark-blue mb-4">Voir plus</a>
+						</div>
+					</div>
+				</div>
+				<div class="container mt-5 text-center">
+					<a href="{{ path('app_base') }}" class="btn btn-dark-blue mb-4">Retour à la Page Principale</a>
+				</div>
+			</div>
+			</div><br><br>
+		</div>
+	{% endblock %}

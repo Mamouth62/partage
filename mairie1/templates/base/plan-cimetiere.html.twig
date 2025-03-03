@@ -1,11 +1,26 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Wancourt -{% endblock %}
+{% block title %}Wancourt Plan Cimetière -{% endblock %}
+
+{% block stylesheets %}
+<style>
+    .image-container img {
+        max-width: 100%; 
+        height: auto; 
+        max-height: 500px; 
+        margin: 0 auto; 
+    }
+</style>
+{% endblock %}
 
 {% block body %}
-<br><br>
-<div class="text-center">
-<h1>Plan du cimetiere</h1><br>
-<img src="img/img_wancourt.png" alt="Description de l'image">
-</div>
+    <div class="container mt-5 text-center">
+        <h1 class="mb-4">Plan du cimetière</h1>
+        {% set img = 'img/plan_cimetiere.jpg' %}
+        <div class="image-container text-center mb-4">
+            <img src="{{ asset(img) }}" alt="Plan du cimetière">
+        </div>
+        <a href="{{ path('app_cimetiere') }}" class="btn btn-dark-blue mb-4">Retour à la Page Cimetière</a>
+        <button onclick="window.print()" class="btn btn-dark-blue mb-4">Imprimer</button>
+    </div>
 {% endblock %}

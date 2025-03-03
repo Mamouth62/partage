@@ -1,15 +1,27 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Wancourt Journal-
+{% block title %}Wancourt CCAS-
 {% endblock %}
 
 {% block stylesheets %}
 	{{ parent() }}
 	<style>
 		body {
-			background-color: #f8f9fa;
-			color: #343a40;
-			font-family: 'Arial', sans-serif;
+			background: url('{{ asset('img/mairie.JPG') }}') no-repeat center center fixed;
+			background-size: cover;
+		}
+
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+		}
+
+		.content-wrapper {
+			background-color: rgba(255, 255, 255, 0.85);
+			padding: 20px;
+			border-radius: 10px;
+			margin-top: 20px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 		}
 		.text-center img {
 			max-width: 100%;
@@ -22,14 +34,16 @@
 
 {% block body %}
 	<div class="container mt-5">
-		<h1 class="mb-4">CCAS PASS JEUNES</h1>
-	</div>
-	{% set img = 'img/ccas_p9.png' %}
-	<div class="text-center">
-		<img src="{{ asset(img) }}">
-	</div>
-	<div class="container mt-5 d-flex justify-content-between">
-		<a href="{{ path('app_journal') }}" class="btn btn-dark-blue mb-4">Retour à la Page Journal</a>
-		<button onclick="window.print()" class="btn btn-dark-blue mb-4">Imprimer</button>
+		<div class="content-wrapper">
+			<h1 class="mb-4">CCAS PASS JEUNES</h1>
+			{% set img = 'img/ccas_p9.png' %}
+			<div class="text-center">
+				<img src="{{ asset(img) }}">
+			</div>
+			<div class="container mt-5 d-flex justify-content-between">
+				<a href="{{ path('app_ccas') }}" class="btn btn-dark-blue mb-4">Retour à la Page CCAS</a>
+				<button onclick="window.print()" class="btn btn-dark-blue mb-4">Imprimer</button>
+			</div>
+		</div><br><br>
 	</div>
 {% endblock %}

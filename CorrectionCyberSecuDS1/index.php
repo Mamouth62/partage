@@ -14,10 +14,42 @@ if(isset($_POST["envoyer"])) {
     $email = filter_input(INPUT_POST,"email", FILTER_SANITIZE_EMAIL);
     $age = filter_input(INPUT_POST,"age", FILTER_SANITIZE_NUMBER_INT);
     $commentaire = filter_input(INPUT_POST,"commentaire", FILTER_SANITIZE_STRING);
+    $cpt = 0;
     echo "nom : $nom";
     echo "email : $email";
     echo "age : $age";
     echo "commentaire : $commentaire";
+    if(empty($nom)){
+        echo "<br/> Veuillez saisir un nom";
+    } else if(preg_match('([^A-Za-z\s])',$nom)) {
+            echo '<br/> Veuillez ne pas mettre de caractères spéciaux';
+        }
+    else if(preg_match('/\d/',$nom)) {
+        echo "<br> Veuillez ne pas mettre de chiffres";
+    } else {
+        $cpt++;
+    }
+    if(empty($email)){
+        echo "<br> Veuillez saisir un email";
+    }else if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+        echo "<br> Veuillez saisir une adresse email valide";
+    } else{
+        $cpt++;
+    }
+    else if(!filter_var($age, FILTER_VALIDATE_INT)){
+    if(empty($age)){
+        echo "<br> Veuillez saisir votre age";     
+    } else if(filter_var($age, FILTER_VALIDATE_INT)){
+        echo "<br> Veuillez saisir votre age en chiffre";
+    } else if($age<18){
+        echo'<br> age supérieur à 18 ';
+    } else {
+        $cpt++;
+    }
+    if(empty($commentaire)){
+        echo"<br> commentaire";
+        }
+    }
 }
 ?>
     <fieldset> 

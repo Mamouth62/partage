@@ -1,14 +1,17 @@
 <?php
 namespace App\Controller;
 
+use App\Entity\Categorie;
 use App\Entity\Contact;
-use App\Form\ContactType;
 use App\Form\CategorieType;
+use App\Form\ContactType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Repository\CatégorieRepository;
+
 
 class BaseController extends AbstractController
 {
@@ -37,11 +40,22 @@ class BaseController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
-    #[Route('/categorie', name: 'app_categorie')]
-    public function categorie(): Response
+    #[Route('//private-categorie', name: 'app_categorie')]
+    public function categorie(Request $request, EntityManagerInterface $em): Response
     {
-        $form = $this->createForm(ContactType::class);
+        $catégorie = new Categorie();
+        $form = $this->createForm(CategorieType::class, $catégorie);
+        if ($request->isMethod('POST')) {
+            $form->handleRequest($request);
+            if ($form->isSubmitted() && $form->isValid()) {
+                $em->persist($catégorie);
+                $em->flush();
+                $this->addFlash('notice', 'Catégorie Ajouté');
+                return $this->redirectToRoute('app_categorie');
+            }
+        }
         return $this->render('categorie/categorie.html.twig', [
+            'form' => $form->createView(),
         ]);
     }
 }

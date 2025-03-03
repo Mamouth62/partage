@@ -1,29 +1,29 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-	{{product.name}}
+    {{ product.name }}
 {% endblock %}
 
 {% block body %}
-	<main class"container">
-		<section class="row">
-			<div class="col-12">
-				<h1>{{product.name}}
-				</h1>
-			</div>
-            <br><br>
-            <div class="col-6">
-           {%for image in product.images %}
-            <img class="image" src="{{ asset('assets/public/image/{{product.image}}')}}" alt="">
-            {% endfor %}
-             </div>
-            <div class="col-6">
-                <p>{{product.description}}</p>
-                <p>Prix : {{product.price}} €</p>
-                <a href="{{path('cart_add', {id: product.id})}}" class="btn btn-success">Ajouter au panier</a>
+    <main class="container">
+        <section class="row">
+            <div class="col-12">
+                <h1>{{ product.name }}</h1>
             </div>
-		</section>
-	</main>
-
-
+            <div class="col-md-6">
+                {% set img = 'image/' ~ product.image %}
+                <img class="img-fluid" src="{{ asset(img) }}" alt="{{ product.name }}">
+            </div>
+			<br><br>
+            <div class="col-md-6">
+                <p>{{ product.description }}</p>
+                <p>Prix : {{ product.price }} €</p>
+                {% for associer in product.associers %}
+                    <span class="badge bg-primary">{{ associer.taille.name }}</span>
+                {% endfor %}
+                <br><br>
+                <a href="{{ path('cart_add', {id: product.id}) }}" class="btn btn-success">Ajouter au panier</a>
+            </div>
+        </section>
+    </main>
 {% endblock %}

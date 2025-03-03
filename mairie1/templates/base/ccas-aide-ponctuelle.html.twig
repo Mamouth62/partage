@@ -1,90 +1,163 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Wancourt Journal -
+{% block title %}Wancourt CCAS -
 {% endblock %}
 
 {% block stylesheets %}
 	{{ parent() }}
 	<style>
 		body {
-			background-color: #f8f9fa;
-			color: #343a40;
-			font-family: 'Arial', sans-serif;
+			background: url('{{ asset('img/mairie.JPG') }}') no-repeat center center fixed;
+			background-size: cover;
 		}
-		.text-center img {
-			max-width: 100%;
-			height: auto;
-			display: block;
+
+		.container {
+			max-width: 800px;
 			margin: 0 auto;
+		}
+
+		.content-wrapper {
+			background-color: rgba(255, 255, 255, 0.85);
+			padding: 20px;
+			border-radius: 10px;
+			margin-top: 20px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		.img-small {
+			width: 100%;
+			max-width: 200px;
+			height: 150px;
+			object-fit: cover;
+		}
+		.table td {
+			vertical-align: middle;
+		}
+		.mt-auto {
+			margin-top: auto;
 		}
 	</style>
 {% endblock %}
 
 {% block body %}
 	<div class="container mt-5">
-		<h1 class="mb-4">CCAS AIDES PONCTUELLES</h1>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-4 text-center">
-					{% set img1 = 'img/ccas_p1.png' %}
-					<img src="{{ asset(img1) }}" class="img-fluid" alt="Description de l'image 1">
-				</div>
-				<div class="col-md-4 text-center">
-					{% set img2 = 'img/ccas_p2.png' %}
-					<img src="{{ asset(img2) }}" class="img-fluid" alt="Description de l'image 2">
-				</div>
-				<div class="col-md-4 text-center">
-					{% set img3 = 'img/ccas_p3.png' %}
-					<img src="{{ asset(img3) }}" class="img-fluid" alt="Description de l'image 3">
-				</div>
-				<div class="row mt-4">
-					<div class="col-md-4 text-center">
-						{% set img4 = 'img/ccas_p4.png' %}
-						<img src="{{ asset(img4) }}" class="img-fluid" alt="Description de l'image 4">
-					</div>
-					<div class="col-md-4 text-center">
-						{% set img5 = 'img/ccas_p5.png' %}
-						<img src="{{ asset(img5) }}" class="img-fluid" alt="Description de l'image 5">
-					</div>
-					<div class="col-md-4 text-center">
-						{% set img6 = 'img/ccas_p6.png' %}
-						<img src="{{ asset(img6) }}" class="img-fluid" alt="Description de l'image 6">
-					</div>
-				</div>
-
-				<div class="row mt-4">
-					<div class="col-md-4 text-center">
-						{% set img7 = 'img/ccas_p7.png' %}
-						<img src="{{ asset(img7) }}" class="img-fluid" alt="Description de l'image 7">
-					</div>
-					<div class="col-md-4 text-center">
-						{% set img8 = 'img/ccas_p8.png' %}
-						<img src="{{ asset(img8) }}" class="img-fluid" alt="Description de l'image 8">
-					</div>
-					<div class="col-md-4 text-center">
-						{% set img9 = 'img/ccas_p9.png' %}
-						<img src="{{ asset(img9) }}" class="img-fluid" alt="Description de l'image 9">
-					</div>
-				</div>
-
-				<div class="row mt-4">
-					<div class="col-md-4 text-center">
-						{% set img10 = 'img/ccas_p10.png' %}
-						<img src="{{ asset(img10) }}" class="img-fluid" alt="Description de l'image 10">
-					</div>
-					<div class="col-md-4 text-center">
-						{% set img11 = 'img/ccas_p11.png' %}
-						<img src="{{ asset(img11) }}" class="img-fluid" alt="Description de l'image 11">
-					</div>
-					<div class="col-md-4 text-center">
-						{% set img12 = 'img/ccas_p12.png' %}
-						<img src="{{ asset(img12) }}" class="img-fluid" alt="Description de l'image 12">
-					</div>
+		<div class="content-wrapper">
+			<h1 class="mb-4">CCAS AIDES PONCTUELLES</h1>
+			<p class="mb-4 text-center">Cliquez sur l'article de votre choix pour lire le résumé complet.</p>
+			<div class="table-responsive">
+				<table class="table table-bordered text-center w-100">
+					<tbody>
+						<tr>
+							<td class="article-summary">
+								<div class="article-content">
+									<h2 class="h4 text-info">Les aides à l'énergie
+									</h2>
+									<p></p>
+									{% set img1 = 'img/ccas_p3.png' %}
+									<img src="{{ asset(img1) }}" alt="Image article 1" class="img-fluid my-3 img-small">
+									<div class="mt-auto">
+										<a href="{{ path('app_ccas_aide_energie') }}" class="btn btn-dark-blue">Lire</a>
+									</div>
+								</div>
+							</td>
+							<td class="article-summary">
+								<div class="article-content">
+									<h2 class="h4 text-info">Les aides à la subsistance</h2>
+									<p></p>
+									{% set img2 = 'img/ccas_p4.png' %}
+									<img src="{{ asset(img2) }}" alt="Image article 2" class="img-fluid my-3 img-small">
+									<div class="mt-auto">
+										<a href="{{ path('app_ccas_aide_subsistance') }}" class="btn btn-dark-blue">Lire</a>
+									</div>
+								</div>
+							</td>
+							<td class="article-summary">
+								<div class="article-content">
+									<h2 class="h4 text-info">Les aides à la cantine</h2>
+									<p></p>
+									{% set img3 = 'img/ccas_p5.png' %}
+									<img src="{{ asset(img3) }}" alt="Image article 3" class="img-fluid my-3 img-small">
+									<div class="mt-auto">
+										<a href="{{ path('app_ccas_aide_cantine') }}" class="btn btn-dark-blue">Lire</a>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="article-summary">
+								<div class="article-content">
+									<h2 class="h4 text-info">La bourse aux étudiants</h2>
+									<p></p>
+									{% set img4 = 'img/ccas_p6.png' %}
+									<img src="{{ asset(img4) }}" alt="Image article 4" class="img-fluid my-3 img-small">
+									<div class="mt-auto">
+										<a href="{{ path('app_ccas_bourse_etudiant') }}" class="btn btn-dark-blue">Lire</a>
+									</div>
+								</div>
+							</td>
+							<td class="article-summary">
+								<div class="article-content">
+									<h2 class="h4 text-info">Aide à la pratique sportive et culturelles pour toute la famille</h2>
+									<p></p>
+									{% set img5 = 'img/ccas_p7.png' %}
+									<img src="{{ asset(img5) }}" alt="Image article 5" class="img-fluid my-3 img-small">
+									<div class="mt-auto">
+										<a href="{{path('app_ccas_aide_sportive_culturelle')}}" class="btn btn-dark-blue">Lire</a>
+									</div>
+								</div>
+							</td>
+							<td class="article-summary">
+								<div class="article-content">
+									<h2 class="h4 text-info">Participation centre de loisirs durant les vacances scolaires</h2>
+									<p></p>
+									{% set img6 = 'img/ccas_p8.png' %}
+									<img src="{{ asset(img6) }}" alt="Image article 6" class="img-fluid my-3 img-small">
+									<div class="mt-auto">
+										<a href="{{path('app_ccas_centre_loisir')}}" class="btn btn-dark-blue">Lire</a>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="article-summary">
+								<div class="article-content">
+									<h2 class="h4 text-info">Informations et coordonnées utiles</h2>
+									<p></p>
+									{% set img7 = 'img/ccas_p10.png' %}
+									<img src="{{ asset(img7) }}" alt="Image article 7" class="img-fluid my-3 img-small">
+									<div class="mt-auto">
+										<a href="{{ path('app_ccas_info_utile') }}" class="btn btn-dark-blue">Lire</a>
+									</div>
+								</div>
+							</td>
+							<td class="article-summary">
+								<div class="article-content">
+									<h2 class="h4 text-info">La mutuelle pour tous</h2>
+									<p></p>
+									{% set img8 = 'img/ccas_p11.png' %}
+									<img src="{{ asset(img8) }}" alt="Image article 8" class="img-fluid my-3 img-small">
+									<div class="mt-auto">
+										<a href="{{ path('app_ccas_mutuelle_pour_tous') }}" class="btn btn-dark-blue">Lire</a>
+									</div>
+								</div>
+							</td>
+							<td class="article-summary">
+								<div class="article-content">
+									<h2 class="h4 text-info">Formulaire</h2>
+									<p></p>
+									{% set img8 = 'img/ccas_p11.png' %}
+									<img src="{{ asset(img8) }}" alt="Image article 8" class="img-fluid my-3 img-small">
+									<div class="mt-auto">
+										<a href="{{ path('app_ccas_mutuelle_pour_tous') }}" class="btn btn-dark-blue">Lire</a>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="container mt-5 text-center">
+					<a href="{{ path('app_ccas') }}" class="btn btn-dark-blue mb-4">Retour à la Page CCAS</a>
 				</div>
 			</div>
 		</div>
-		<div class="container mt-5 d-flex justify-content-between">
-			<a href="{{ path('app_vie_pratique') }}" class="btn btn-dark-blue mb-4">Retour à la Page Vie Pratique</a>
-			<button onclick="window.print()" class="btn btn-dark-blue mb-4">Imprimer</button>
-		</div>
-	{% endblock %}
+	</div><br><br>
+{% endblock %}

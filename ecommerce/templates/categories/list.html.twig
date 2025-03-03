@@ -1,4 +1,40 @@
 {% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ category.name }}
+{% endblock %}
+
+{% block body %}
+    <main class="container">
+        <section class="row">
+            <div class="col-12">
+                <h1>Liste des produits de {{ category.name }}</h1>
+            </div>
+            {% for product in category.products %}
+                <div class="col-4 mb-4"> {# Utilisation de col-4 pour afficher 3 produits par ligne #}
+                    <div class="card" style="width: 100%;">
+                        {% set img = 'image/' ~ product.image %}
+                        <a href="{{ path('products_details', {'slug': product.slug}) }}" class="btn btn-primary">
+                            <img class="card-img-top" src="{{ asset(img) }}" alt="{{ product.name }}">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ product.name }}</h5>
+                            <p class="card-text">{{ product.price }}€</p>
+                            <a href="{{ path('cart_add', {'id': product.id}) }}" class="btn btn-primary">
+                                <i class="bi bi-cart"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% if loop.index % 3 == 0 and not loop.last %}
+                    </section><section class="row">
+                {% endif %}
+            {% endfor %}
+        </section>
+    </main>
+{% endblock %}
+
+{# {% extends 'base.html.twig' %}
 {% block title %}
 	{{ category.name }}
 {% endblock %}
@@ -11,36 +47,51 @@
 					{{ category.name }}</h1>
 			</div>
 			{% for product in category.products %}
-			<br>
-				<div class="row">
-					<div class="col-3 mb-3">
-						<div class="card">
-						<img class="card-img-top" src="image/{{product.image}}">
-						</div>
-						<h2 class="card-title"> {{product.name}}</h2>
-						{# <p class= "card-text">{{product.description}}</p> #}
-						<a href="{{path('products_details', {"slug": product.slug})}}" class"btn btn-primary">Voir les détails</a>
-					</div>
-					<div class="col-3 md-3">
-						<div class="card"></div>
-					</div>
-					<div class="col-3 md-3">
-						<div class="card"></div>
-					</div>
-					<div class="col-3 md-3">
-						<div class="card"></div>
-					</div>
-				</div>
+			<div class="card" style="width: 18rem;">
+				{% set img = 'image/'~product.image %}
+											<a href="{{path('products_details', {"slug": product.slug})}}" class"btn btn-primary"><img class="card-img-top" src="{{asset(img)}}">
+				<div class="card-body">
+					<h5 class="card-title">{{product.name}}</h5>
+					<p class="card-text">{{product.price}}€</p>
+					<br>
+					<a href="{{path('cart_add', {id: product.id})}}" class="btn btn-primary">Ajouter au panier <i class="bi bi-cart"></i></a>
+				</div> 
+			</div> #}
+			{#	<div class="row row-cols-1 row-cols-md-3 g-4">
+							{% for product in category.products %}
+								<div class="col-12">
+									<div class="col-3 mb-3">
+										<div class="card border-dark mb-3" style="max-width: 18rem margin-left: 10px;">
+										{% set img = 'image/'~product.image %}
+											<a href="{{path('products_details', {"slug": product.slug})}}" class"btn btn-primary"><img class="card-img-top" src="{{asset(img)}}">
+										</div>
+										<h2 class="card-title">
+											{{product.name}}
+											</a>
+											<br><br> {{product.price}} €
+											</h2>
+											
+											<br>
+										{# <p class= "card-text">{{product.description}}</p> 
+										 <a href="{{path('cart_add', {id: product.id})}}" class="ajout">Ajouter au panier</a>
+									</div>
+									<div class="col-4 md-4">
+										<div class="card"></div>
+									</div>
+									<div class="col-3 md-3">
+										<div class="card"></div>
+									</div>
+									<div class="col-3 md-3">
+										<div class="card"></div>
+									</div>
+								</div> #}
 
 
-				{# <div class="col-3">
-													<article class="card h-100 ">
-														<div class="card-body">
-														<h2 class="card-title"> {{product.name}}</h2>
-														<p class= "card-text">{{product.description}}</p>
-														<a href="#" class"btn btn-primary">Voir les détails</a> #}
+			{# <div class="col-3">
+																					<article class="card h-100 ">
+																						<div class="card-body">
+																						<h2 class="card-title"> {{product.name}}</h2>
+																						<p class= "card-text">{{product.description}}</p>
+																						<a href="#" class"btn btn-primary">Voir les détails</a> #}
 
-			{% endfor %}
-		</section>
-	</main>
-{% endblock %}
+	

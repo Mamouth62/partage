@@ -1,0 +1,82 @@
+<body class="d-flex flex-column min-vh-100">
+    <nav class="navbar navbar-expand-lg navbar-custom" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{ path('app_base') }}">Wancourt</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_journal') }}">Journal</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="{{ path('app_mairie') }}" role="button" aria-haspopup="true" aria-expanded="false">Mairie</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ path('app_agenda') }}">Agenda</a>
+                            <a class="dropdown-item" href="{{ path('app_horaire') }}">Horaires</a>
+                            <a class="dropdown-item" href="{{ path('app_info') }}">Informations</a>
+                            <a class="dropdown-item" href="{{ path('app_commissions_et_delegations') }}">Commissions et Délégations</a>
+                            <a class="dropdown-item" href="{{ path('app_arrete_communaux') }}">Arrêtés Communaux</a>
+                            <a class="dropdown-item" href="{{ path('app_cimetiere') }}">Cimetière</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{ path('app_mairie') }}">Tout</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Vie Pratique</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ path('app_etat_civil') }}">État civil</a>
+                            <a class="dropdown-item" href="{{ path('app_carte_nationale_identite') }}">Carte nationale d'identité</a>
+                            <a class="dropdown-item" href="{{ path('app_passeport_biometrique') }}">Passeport biométrique</a>
+                            <a class="dropdown-item" href="{{ path('app_certificat') }}">Certificat...</a>
+                            <a class="dropdown-item" href="{{ path('app_election') }}">Élection</a>
+                            <a class="dropdown-item" href="{{ path('app_armee') }}">Recensement</a>
+                             <a class="dropdown-item" href="{{path('app_ccas_aides_ponctuelles')}}">CCAS Aides Ponctuelles</a>
+                            <a class="dropdown-item" href="{{path('app_ccas_pass_jeunes')}}">CCAS Pass Jeunes</a>
+                            <a class="dropdown-item" href="{{ path('app_urbanisme') }}">Urbanisme</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{ path('app_vie_pratique') }}">Tout</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Vie Associative</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ path('app_fitclub') }}">Fitclub</a>
+                            <a class="dropdown-item" href="{{ path('app_association_parents_eleves') }}">Association parents d'élèves</a>
+                            <a class="dropdown-item" href="{{ path('app_amicale_des_anciens') }}">Amicale des anciens</a>
+                            <a class="dropdown-item" href="{{ path('app_sophrologie') }}">Sophrologie</a>
+                            <a class="dropdown-item" href="{{ path('app_art_coeur') }}">Art'coeur</a>
+                            <a class="dropdown-item" href="{{ path('app_bibliotheque') }}">Bibliothèque</a>
+                            <a class="dropdown-item" href="{{ path('app_comite_des_fetes') }}">Comité des fêtes</a>
+                            <a class="dropdown-item" href="{{ path('app_endurance') }}">Endurance</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{ path('app_vie_associative') }}">Tout</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Location de salle</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ path('app_rue_flandres') }}">Rue de Flandres</a>
+                            <a class="dropdown-item" href="{{ path('app_rue_alsace') }}">Rue d'Alsace</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{ path('app_location_des_salles') }}">Tout</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Education</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ path('app_rpi') }}">RPI</a>
+                            <a class="dropdown-item" href="{{ path('app_assistantes_maternelles') }}">Relais Des Assistantes Matérielles</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{ path('app_education') }}">Tout</a>
+                        </div>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-sm-2" type="search" placeholder="Search">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Rechercher</button>
+                </form>
+            </div>
+        </div>
+    </nav>

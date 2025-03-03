@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wancourt Journal - Ducasse{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .text-center img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .headline {
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .img-fluid {
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .btn-dark-blue {
+            background-color: #343a40;
+            border-color: #343a40;
+            color: #fff;
+            transition: background-color 0.2s, box-shadow 0.2s;
+        }
+        .btn-dark-blue:hover {
+            background-color: #1d2124;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .img-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <h1 class="headline text-primary">Bulletin ARS</h1>
+        <p class="mb-4 text-center">Qualité sanitaire des eaux destinées à la consommation humaine</p>
+        
+        <div class="row">
+            <div class="col-md-6 img-container">
+                {% set img1 = 'img/bulletin_ars_eau.jpg' %}
+                <img src="{{ asset(img1) }}" alt="Image 1" class="img-fluid">
+            </div>
+            <div class="col-md-6 img-container">
+                {% set img2 = 'img/bulletin_ars_2.jpg' %}
+                <img src="{{ asset(img2) }}" alt="Image 2" class="img-fluid">
+            </div>
+        </div>
+    <div class="container mt-5 d-flex justify-content-between">
+        <a href="{{ path('app_journal') }}" class="btn btn-dark-blue mb-4">Retour à la Page Journal</a>
+        <button onclick="window.print()" class="btn btn-dark-blue mb-4">Imprimer</button>
+    </div>
+{% endblock %}

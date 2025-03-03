@@ -1,0 +1,107 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wancourt -
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<style>
+		body {
+			background: url('{{ asset('img/mairie.JPG') }}') no-repeat center center fixed;
+			background-size: cover;
+		}
+
+		.content-wrapper {
+			background-color: rgba(255, 255, 255, 0.9);
+			padding: 20px;
+			border-radius: 10px;
+		}
+
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 0 15px;
+		}
+
+		.table {
+			width: 100%;
+			border-collapse: collapse;
+			margin-bottom: 30px;
+		}
+
+		.table td {
+			text-align: center;
+			vertical-align: middle;
+			border: 1px solid #ddd;
+			padding: 20px;
+			background-color: rgba(255, 255, 255, 0.85);
+		}
+
+		.table h2,
+		.table p,
+		h1,
+		.lead,
+		a {
+			color: rgba(51, 51, 51, 0.8);
+		}
+
+		.btn-center {
+			display: flex;
+			justify-content: center;
+		}
+
+		.btn-center .btn {
+			margin: 0 auto;
+		}
+
+		.headline {
+			color: rgba(51, 51, 51, 0.8);
+		}
+
+		.lead {
+			color: rgba(51, 51, 51, 0.8);
+		}
+	</style>
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-5">
+		<div class="content-wrapper">
+			<h1 class="mb-4 headline">ARRETES COMMUNAUX PERMANENTS</h1>
+			<p class="text-center lead">Cliquez sur l'article de votre choix pour lire le résumé complet.</p>
+			<div class="table-responsive">
+				<table class="table table-bordered">
+					<tbody>
+						<tr>
+							<td class="article-summary">
+								<h2 class="h4">FEUX DE VEGETAUX POTAGER</h2>
+								<a href="{{ path('app_feux_vegetaux_potager') }}" class="btn btn-dark-blue mb-4">Voir</a>
+							</td>
+							<td class="article-summary">
+								<h2 class="h4">BRUITS DE VOISINAGE</h2>
+								<a href="{{ path('app_bruits_voisinages') }}" class="btn btn-dark-blue mb-4">Voir</a>
+							</td>
+							<td class="article-summary">
+								<h2 class="h4">FEUX ARTIFICE PRIVE</h2>
+								<a href="{{ path('app_feux_artifices') }}" class="btn btn-dark-blue mb-4">Voir</a>
+							</td>
+						</tr>
+						<tr>
+							<td class="article-summary">
+								<h2 class="h4">DEJECTION ANIMALE</h2>
+								<a href="{{ path('app_dejection_animale') }}" class="btn btn-dark-blue mb-4">Voir</a>
+							</td>
+							<td class="article-summary">
+								<h2 class="h4">DEMARCHAGE A DOMICILE</h2>
+								<a href="{{ path('app_demarchage_domicile') }}" class="btn btn-dark-blue mb-4">Voir</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="container mt-5 text-center">
+				<a href="{{ path('app_mairie') }}" class="btn btn-dark-blue mb-4">Retour à la Mairie</a>
+			</div>
+		</div><br>
+	</div>
+{% endblock %}

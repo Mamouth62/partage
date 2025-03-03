@@ -1,32 +1,56 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Wancourt - Location des salles
+{% block title %}Wancourt - Location des salles{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        .headline {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        .article-summary {
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .article-summary h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        .article-summary p {
+            font-size: 1rem;
+            color: #6c757d;
+        }
+    </style>
 {% endblock %}
 
 {% block body %}
-	<div class="container mt-5">
-		<h1 class="mb-4">Location des salles</h1>
-		<p class="mb-4">Cliquez sur la salle qui vous intéresse</p>
-		<div class="table-responsive">
-			<table class="table table-bordered">
-				<tbody>
-					<tr>
-						<td class="article-summary">
-							<h2 class="h4">SALLE DES FÊTES RUE DE FLANDRES</h2>
-							<p>#</p>
-							<a href="{{ path('app_rue_flandres') }}" class="btn btn-info">Voir</a>
-						</td>
-						<td class="article-summary">
-							<h2 class="h4">SALLE DES ASSOCIATIONS RUE D'ALSACE</h2>
-							<p>#</p>
-							<a href="{{ path('app_rue_alsace') }}" class="btn btn-info">Voir</a>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
-	<div class="container mt-5">
-		<a href="{{ path('app_base') }}" class="btn btn-dark-blue mb-4">Retour à la Page Principale</a>
-	</div>
+    <div class="container mt-5">
+        <h1 class="headline text-primary text-center">Location des salles</h1>
+        <p class="lead mb-4 text-center">Cliquez sur la salle qui vous intéresse</p>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="article-summary">
+                            <h2 class="h4">SALLE DES FÊTES</h2>
+                            <p>Pour vos réceptions et événements.</p>
+                            <a href="{{ path('app_rue_flandres') }}" class="btn btn-dark-blue mb-4">Voir</a>
+                        </td>
+                        <td class="article-summary">
+                            <h2 class="h4">SALLE DES ASSOCIATIONS</h2>
+                            <p>Pour vos réceptions et événements.</p>
+                            <a href="{{ path('app_rue_alsace') }}" class="btn btn-dark-blue mb-4">Voir</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="container mt-5 text-center">
+        <a href="{{ path('app_base') }}" class="btn btn-dark-blue mb-4">Retour à la Page Principale</a>
+    </div>
 {% endblock %}

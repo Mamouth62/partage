@@ -1,52 +1,86 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Certificat, copie, légalisation et conservation de documents - Wancourt
-{% endblock %}
+{% block title %}Certificat, copie, légalisation et conservation de documents - Wancourt{% endblock %}
 
 {% block stylesheets %}
-	{{ parent() }}
-	<style>
-		body {
-			background-color: #f8f9fa;
-			color: #343a40;
-			font-family: 'Arial', sans-serif;
-		}
-		.content-section {
-			margin-top: 20px;
-		}
-		.content-section h2 {
-			margin-bottom: 15px;
-		}
-		.content-section p {
-			margin-bottom: 10px;
-		}
-	</style>
+    {{ parent() }}
+    <style>
+        body {
+            background: url('{{ asset('img/aire_jeu_sdf.JPG') }}') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .container {
+            max-width: 1500px;
+            margin: 0 auto;
+        }
+
+        .content-wrapper {
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: rgba(51, 51, 51, 0.8);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .content-section {
+            margin-top: 20px;
+        }
+
+        .content-section h2 {
+            margin-bottom: 15px;
+        }
+
+        .content-section p {
+            margin-bottom: 10px;
+        }
+
+        ol {
+            color: rgba(51, 51, 51, 0.8);
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 {% endblock %}
 
 {% block body %}
-	<div class="container mt-5">
-		<h1 class="mb-4">Certificat, copie, légalisation et conservation de documents</h1>
-		<div class="content-section">
-			<h2>Certificats</h2>
-			<p>Les certificats sont des documents officiels délivrés par la mairie pour attester de certaines informations. Ils peuvent inclure des certificats de résidence, des certificats de vie, et d'autres types de certificats requis pour diverses démarches administratives.</p>
-		</div>
-		<div class="content-section">
-			<h2>Copies conformes</h2>
-			<p>La mairie peut fournir des copies conformes de documents officiels. Une copie conforme est une reproduction exacte d'un document original, certifiée comme étant fidèle à l'original par une autorité compétente.</p>
-		</div>
-		<div class="content-section">
-			<h2>Légalisation de documents</h2>
-			<p>La légalisation de documents est le processus par lequel la mairie authentifie les signatures sur les documents officiels, tels que des contrats, des actes notariés, et d'autres documents juridiques, pour leur donner une valeur légale.</p>
-		</div>
-		<div class="content-section">
-			<h2>Conservation de documents</h2>
-			<p>La mairie est responsable de la conservation de certains documents officiels. Cela inclut des registres d'état civil, des archives municipales, et d'autres documents importants qui doivent être conservés pour des raisons administratives et historiques.</p>
-		</div><br>
-        <div class="text-center mt-5">
-			<a href="https://www.service-public.fr/particuliers/vosdroits/N365" class="btn btn-dark-blue">Lien vers les Services Publiques</a>
-		</div><br>
-		<div class="container">
-			<a href="{{ path('app_vie_pratique') }}" class="btn btn-dark-blue mb-4">Retour à la Page Vie Pratique</a>
-		</div>
-	</div>
+    <div class="container mt-5">
+        <div class="content-wrapper">
+            <h1 class="mb-4 text-center">Certificat, copie, légalisation et conservation de documents</h1><br>
+            <div class="content-section">
+                <h2>Copies conformes</h2>
+                <p>La mairie peut fournir des copies conformes de documents officiels. Une copie conforme est une reproduction exacte d'un document original, certifiée comme étant fidèle à l'original par une autorité compétente.</p>
+            </div>
+            <div class="content-section">
+                <h2>Légalisation de documents</h2>
+                <p>La légalisation de documents est le processus par lequel la mairie authentifie les signatures sur les documents officiels, tels que des contrats, des actes notariés, et d'autres documents juridiques, pour leur donner une valeur légale.</p>
+            </div>
+            <div class="text-center mt-5">
+                <a href="https://www.service-public.fr/particuliers/vosdroits/N365" class="btn btn-dark-blue">Lien vers les Services Publiques</a>
+            </div>
+            <div class="text-center mt-5">
+                <a href="{{ path('app_vie_pratique') }}" class="btn btn-dark-blue mb-4">Retour à la Page Vie Pratique</a>
+            </div>
+        </div>
+    </div>
 {% endblock %}

@@ -1,47 +1,94 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Élection et Inscription sur les listes électorales - Wancourt
-{% endblock %}
+{% block title %}Élection et Inscription sur les listes électorales - Wancourt{% endblock %}
 
 {% block stylesheets %}
-	{{ parent() }}
-	<style>
-		body {
-			background-color: #f8f9fa;
-			color: #343a40;
-			font-family: 'Arial', sans-serif;
-		}
-		.content-section {
-			margin-top: 20px;
-		}
-		.content-section h2 {
-			margin-bottom: 15px;
-		}
-		.content-section p {
-			margin-bottom: 10px;
-		}
-	</style>
+    {{ parent() }}
+    <style>
+        body {
+            background: url('{{ asset('img/aire_jeu_sdf.JPG') }}') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .container {
+            max-width: 1500px;
+            margin: 0 auto;
+        }
+
+        .content-wrapper {
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: rgba(51, 51, 51, 0.8);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .content-section {
+            margin-top: 20px;
+        }
+
+        .content-section h2 {
+            margin-bottom: 15px;
+        }
+
+        .content-section p {
+            margin-bottom: 10px;
+        }
+
+        ul {
+            color: rgba(51, 51, 51, 0.8);
+            margin-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 {% endblock %}
 
 {% block body %}
-	<div class="container mt-5">
-		<h1 class="mb-4">Élection</h1>
-		<div class="content-section">
-			<h2>Inscription sur les listes électorales</h2>
-			<p>Pour pouvoir voter, vous devez être inscrit sur les listes électorales. L'inscription est possible dès l'âge de 18 ans et peut se faire à tout moment de l'année. Cependant, pour voter lors des prochaines élections, il est nécessaire de s'inscrire avant une date limite spécifique.</p>
-			<p>
-				<strong>Comment s'inscrire :</strong>
-			</p>
-			<ul>
-				<li>En ligne sur le site
-					<a href="https://www.service-public.fr/particuliers/vosdroits/N47" target="_blank">Service-Public.fr</a>
-				</li>
-				<li>En vous rendant en mairie avec une pièce d'identité et un justificatif de domicile</li>
-				<li>Par courrier en envoyant à la mairie le formulaire d'inscription dûment rempli, accompagné des pièces justificatives</li>
-			</ul>
-		</div><br>
-		<div class="container">
-			<a href="{{ path('app_vie_pratique') }}" class="btn btn-dark-blue mb-4">Retour à la Page Vie Pratique</a>
-		</div>
-	</div>
+    <div class="container mt-5">
+        <div class="content-wrapper">
+            <h1 class="mb-4 text-center">Élection</h1>
+            <div class="content-section">
+                <h2>Inscription sur les listes électorales</h2>
+                <p>Pour pouvoir voter, vous devez être inscrit sur les listes électorales. L'inscription est possible dès l'âge de 18 ans et peut se faire à tout moment de l'année. Cependant, pour voter lors des prochaines élections, il est nécessaire de s'inscrire avant une date limite spécifique.</p>
+                <p>
+                    <strong>Comment s'inscrire :</strong>
+                </p>
+                <ul>
+                    <li>En ligne sur le site
+                        <a href="https://www.service-public.fr/particuliers/vosdroits/N47" target="_blank">Service-Public.fr</a>
+                    </li>
+                    <li>En vous rendant en mairie avec une pièce d'identité et un justificatif de domicile</li>
+                    <li>Par courrier en envoyant à la mairie le formulaire d'inscription dûment rempli, accompagné des pièces justificatives</li>
+                </ul>
+            </div>
+            <div class="text-center mt-5">
+                <a href="{{ path('app_vie_pratique') }}" class="btn btn-dark-blue mb-4">Retour à la Page Vie Pratique</a>
+            </div>
+        </div>
+    </div>
 {% endblock %}

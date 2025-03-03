@@ -1,38 +1,72 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Wancourt Mairie-
+{% block title %}Wancourt Informations -{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        body {
+            background: url('{{ asset('img/mairie.JPG') }}') no-repeat center center fixed; /* Change 'background.jpg' to the actual image file */
+            background-size: cover;
+        }
+        .content-background {
+            background-color: rgba(255, 255, 255, 0.8); /* White background with 80% opacity */
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            padding: 0 15px;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 {% endblock %}
 
 {% block body %}
-	<div class="container mt-5">
-		<h1 class="mb-4">Informations</h1>
-		<div class="text-center">
-			<h5><br>
-				OUVERTURE DU SECRETARIAT DE LA MAIRIE
-				<br>
-				LUNDI-MARDI ET JEUDI DE 14H00 A 17H00
-				<br>
-				VENDREDI DE 14H00 A 16H30</h5>
-			<br><br>
-			Plan de la commune:
-			<br><br>
-			<div style="text-align: center;">
-				<iframe allowfullscreen="" frameborder="0" height="450" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d4290.950305782423!2d2.867637411037937!3d50.246845720388336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1574072807576!5m2!1sfr!2sfr" style="border:0;" width="600"></iframe>
-			</div>
-			<br><br>
-			<aside id="Meteo" class="widget">
-				<h5 class="widget-title">La m&eacute;t&eacute;o &agrave; Wancourt</h5>
-				<center>
-					<div id='tameteo' style='font-family:Arial;text-align:center;border:solid 1px #000000; background:#DCEDE0; width:145px; padding:4px'>
-
-						Wancourt</a><br/><a href='http://www.ta-meteo.fr' target='_blank' title='ta-meteo'>
-						<img src='http://www.ta-meteo.fr/widget4/5a31e609021b40cd856dcf4d17a46c65.png' border='0'></a><br/>
-					<a href='http://www.meteonet.org' style='font-size:10px;text-decoration:none;color:#000000;line-height:10px;' target='_blank'>&copy; Donn&eacute;es meteonet</a>
-				</div>
-			</center>
-		</aside>
-	</div>
-	<div class="container">
-		<a href="{{path('app_mairie')}}" class="btn btn-dark-blue mb-4">Retour à la page mairie</a>
-	</div>
+    <div class="container mt-5 content-background">
+        <h1 class="mb-4 text-center">Horaires - Informations</h1>
+        <div class="text-center">
+            {% set img = 'img/mairie.JPG' %}
+            <div class="text-center mb-4">
+                <img src="{{ asset(img) }}" class="img-fluid" style="width: 100%; height: auto; max-width: 65%;">
+            </div>
+            <h5>
+                1 rue de Picardie<br>
+                62128 Wancourt<br>
+                Téléphone : 03 21 48 15 86<br><br>
+                Adresse Courriel : mairie@wancourt.fr<br><br>
+                Ouverture du secrétariat de la mairie :<br>
+                Lundi, mardi et jeudi de 14h00 à 17h00<br>
+                Vendredi de 14h00 à 16h30
+            </h5>
+            <br><br>
+            <p>Plan de la commune :</p>
+            <div style="text-align: center;">
+                <iframe allowfullscreen="" frameborder="0" height="450" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d4290.950305782423!2d2.867637411037937!3d50.246845720388336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1574072807576!5m2!1sfr!2sfr" style="border:0; width: 100%; max-width: 600px;"></iframe>
+            </div>
+            <br><br>
+            <aside id="Meteo" class="widget">
+                <h5 class="widget-title">La météo à Wancourt</h5>
+                <center>
+                        <div id='tameteo' style='font-family:Arial;text-align:center;border:solid 1px #000000; background:#DCEDE0; width:145px; padding:4px'><a href='https://www.xn--mto-bmab.fr/wancourt' target='_blank' title='Météo Wancourt' style='font-weight: bold;font-size:14px;text-decoration:none;color:#000000;line-height:14px;'>Wancourt</a><br/><a href='https://www.xn--mto-bmab.fr' target='_blank' title='ta-meteo'><img src='https://www.xn--mto-bmab.fr/widget4/110e3bef590a42008941efb407c02d86.png?t=time()' border='0'></a><br/>&copy; <a href='https://www.xn--mto-bmab.fr' style='font-size:10px;text-decoration:none;color:#000000;line-height:10px;' target='_blank' >meteo.fr</a></div>
+                </center>
+            </aside>
+            <br><p>INFORMATION RGPD (Protection des données personnelles)<br>
+            <a href="https://www.wancourt.fr/data/documents/mairie/Informations/CHARTE_RGPD.pdf">https://www.wancourt.fr/data/documents/mairie/Informations/CHARTE_RGPD.pdf</a></p>
+        </div>
+        <div class="container mt-5 text-center">
+            <a href="{{ path('app_mairie') }}" class="btn btn-dark-blue mb-4">Retour à la page mairie</a>
+        </div>
+    </div>
 {% endblock %}

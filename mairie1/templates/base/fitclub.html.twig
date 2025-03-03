@@ -1,41 +1,55 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Wancourt -
+{% block title %}Wancourt - Fitclub
 {% endblock %}
 
 {% block stylesheets %}
 	{{ parent() }}
 	<style>
 		body {
-			background-color: #f8f9fa;
-			color: #343a40;
-			font-family: 'Arial', sans-serif;
+			background: url('{{ asset('img/sdf.JPG') }}') no-repeat center center fixed;
+			background-size: cover;
 		}
-		.text-center img {
-			max-width: 100%;
-			height: auto;
-			display: block;
+
+		.container {
+			max-width: 800px;
 			margin: 0 auto;
+		}
+
+		.content-wrapper {
+			background-color: rgba(255, 255, 255, 0.85);
+			padding: 20px;
+			border-radius: 10px;
+			margin-top: 20px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 		}
 	</style>
 {% endblock %}
 
 {% block body %}
 	<div class="container mt-5">
+    <div class="content-wrapper">
 		<h1 class="mb-4">Fitclub</h1>
-		<h5>De septembre à juin, un cours hebdomadaire de gym d'entretien (remise en forme, aérobie, renforcement musculaire, ...) est mis en place à la salle des fêtes. Les séances sont encadrées par un moniteur possédant un brevet d'état,
-			
-			<br><br>Personne à contacter : Laurent Quint 06.62.25.16.33 <br><br>
-			 
-			2 cours ont lieu tous les mercredis de 18h45 à 19h45, et de 19h45 à 20h45.<br><br>
-			 
-			Il n'y a aucune limite d'âge !<br><br>
-			
-			Un certificat médical d'aptitude est obligatoire dès le premier cours.<br><br>
-			 
-			Le montant de la cotisation annuelle est de 45€ par personne,
-			Rapporter si possible un tapis de sol.<br><br>
-			
-			Prendre contact auprès de Laurent pour inscription
-		</h5>
-	{% endblock %}
+			<h5>De septembre à juin, un cours hebdomadaire de gym d'entretien (remise en forme, aérobie, renforcement musculaire, ...) est mis en place à la salle des fêtes. Les séances sont encadrées par un moniteur possédant un brevet d'état,
+
+				<br><br>Personne à contacter : Laurent Quint 06.62.25.16.33
+				<br><br>
+
+				2 cours ont lieu tous les mercredis de 18h45 à 19h45, et de 19h45 à 20h45.<br><br>
+
+				Il n'y a aucune limite d'âge !<br><br>
+
+				Un certificat médical d'aptitude est obligatoire dès le premier cours.<br><br>
+
+				Le montant de la cotisation annuelle est de 45€ par personne,
+								                        Rapporter si possible un tapis de sol.<br><br>
+
+				Prendre contact auprès de Laurent pour inscription
+			</h5>
+			<div class="container mt-5">
+				<a href="{{ path('app_vie_associative') }}" class="btn btn-dark-blue mb-4">Retour à la Page Vie Associative</a>
+				<button onclick="window.print()" class="btn btn-dark-blue mb-4">Imprimer</button>
+			</div>
+		</div>
+	</div>
+{% endblock %}

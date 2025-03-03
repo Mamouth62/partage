@@ -1,25 +1,61 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Wancourt -{% endblock %}
+{% block title %}Wancourt -
+{% endblock %}
 
 {% block stylesheets %}
-    {{ parent() }}
-    <style>
-        body {
-            background-color: #f8f9fa; 
-            color: #343a40; 
-            font-family: 'Arial', sans-serif; 
-        }
-        .text-center img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
-    </style>
+	{{ parent() }}
+	<style>
+		body {
+			background: url('{{ asset('img/mairie.JPG') }}') no-repeat center center fixed;
+			background-size: cover;
+		}
+
+		.content-wrapper {
+			background-color: rgba(255, 255, 255, 0.9);
+			padding: 20px;
+			border-radius: 10px;
+		}
+
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 0 15px;
+		}
+		.text-center img {
+			max-width: 100%;
+			height: auto;
+			display: block;
+			margin: 0 auto;
+		}
+		.gallery-item {
+			margin-bottom: 30px;
+		}
+	</style>
 {% endblock %}
 
 {% block body %}
-<div class="container mt-5">
-		<h1 class="mb-4">Démarchage à Domicile</h1>
+	<div class="container mt-5">
+		<div class="content-wrapper">
+			<h1 class="mb-4">Démarchage à Domicile</h1>
+			<div class="row">
+				<div class="col-md-6 mb-4">
+					<div class="text-center gallery-item">
+						{% set img1 = 'img/demarchage1.png' %}
+						<img src="{{ asset(img1) }}" class="img-fluid" alt="Démarchage 1">
+					</div>
+				</div>
+				<div class="col-md-6 mb-4">
+					<div class="text-center gallery-item">
+						{% set img2 = 'img/demarchage2.png' %}
+						<img src="{{ asset(img2) }}" class="img-fluid" alt="Démarchage 2">
+					</div>
+				</div>
+				<div class="container mt-5 d-flex justify-content-between">
+					<a href="{{ path('app_arrete_communaux') }}" class="btn btn-dark-blue mb-4">Retour à la Arrêtés Communaux</a>
+					<button onclick="window.print()" class="btn btn-dark-blue mb-4">Imprimer</button>
+				</div>
+			</div>
+		</div><br>
+	</div>
 {% endblock %}

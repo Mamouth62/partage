@@ -22,14 +22,14 @@
 						{% for element in data %}
 							<tr>
 								<td>{{element.product.name}}</td>
-								<td>{{element.product.price}}€
+								<td>{{element.product.price}} €
 									</td>
 								<td>{{element.quantity}}</td>
 								<td>{{element.quantity * element.product.price}}</td>
 								<td>
-									<a href="{{path('cart_add', {id: element.product.id})}}" class="btn btn-success">+</a>
-									<a href="{{path('cart_remove', {id: element.product.id})}}" class="btn btn-warning">-</a>
-									<a href="{{path('cart_delete', {id: element.product.id})}}" class="btn btn-danger">Supprimer</a>
+									<a href="{{path('cart_add', {id: element.product.id})}}" class="btn btn-dark">+</a>
+									<a href="{{path('cart_remove', {id: element.product.id})}}" class="btn btn-dark">-</a>
+									<a href="{{path('cart_delete', {id: element.product.id})}}" class="btn btn-dark">Supprimer</a>
 								</td>
 							</tr>
 						{% else %}
@@ -43,11 +43,12 @@
                     <td colspan="3">Total</td>
                     <td> {{total}} €</td>
                     <td>
-                        <a href="{{path('cart_empty')}}" class="btn btn-danger">Vider</a>
+                        <a href="{{path('cart_empty')}}" class="btn btn-dark">Vider</a>
                     </td>
                     </tr>
                     </tfoot>
 				</table>
+				<a href="{{path('app_orders_add')}}" class="btn btn-primary">Valider le panier</a>
 			</div>
 		</section>
 	</main>

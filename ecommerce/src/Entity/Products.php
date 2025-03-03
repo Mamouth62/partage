@@ -42,9 +42,16 @@ class Products
     #[ORM\OneToMany(targetEntity: Images::class, mappedBy: 'products', orphanRemoval: true)]
     private Collection $images;
 
+    /**
+     * @var Collection<int, Associer>
+     */
+    #[ORM\OneToMany(targetEntity: Associer::class, mappedBy: 'produit')]
+    private Collection $associers;
+
     public function __construct()
     {
         $this->images = new ArrayCollection();
+        $this->associers = new ArrayCollection();
     }
 
 
@@ -139,6 +146,36 @@ class Products
             // set the owning side to null (unless already changed)
             if ($image->getProducts() === $this) {
                 $image->setProducts(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Associer>
+     */
+    public function getAssociers(): Collection
+    {
+        return $this->associers;
+    }
+
+    public function addAssocier(Associer $associer): static
+    {
+        if (!$this->associers->contains($associer)) {
+            $this->associers->add($associer);
+            $associer->setProduit($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAssocier(Associer $associer): static
+    {
+        if ($this->associers->removeElement($associer)) {
+            // set the owning side to null (unless already changed)
+            if ($associer->getProduit() === $this) {
+                $associer->setProduit(null);
             }
         }
 

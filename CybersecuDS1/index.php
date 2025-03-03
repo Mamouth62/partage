@@ -3,7 +3,6 @@
 require_once 'src/header.php';
 require_once 'src/functions.php';
 $page = filter_input(INPUT_GET, 'page', FILTER_SANITIZE_STRING);
-
 switch ($page) {
     case 'form':
         require_once 'src/form.php';

@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Foot2Street
+{% endblock %}
+
+{% block body %}
+	<!DOCTYPE html>
+	<html lang="fr">
+		<head>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>Formulaire de Commande</title>
+			<link href="https://bootswatch.com/5/lux/bootstrap.min.css" rel="stylesheet">
+		</head>
+		<body>
+			<div class="container">
+				<h1 class="mt-5">Passer Commande</h1>
+				<form action="/submit-order" method="POST">
+					<div class="form-group">
+						<label for="name">Nom</label>
+						<input type="text" class="form-control" id="name" name="name" required>
+					</div>
+                    <div class="form-group">
+						<label for="name">Prénom</label>
+						<input type="text" class="form-control" id="name" name="name" required>
+					</div>
+					<div class="form-group">
+						<label for="email">Email</label>
+						<input type="email" class="form-control" id="email" name="email" required>
+					</div>
+					<div class="form-group">
+						<label for="address">Adresse de Livraison</label>
+						<textarea class="form-control" id="address" name="address" rows="3" required></textarea>
+					</div>
+					<h2 class="mt-4">Informations de Paiement</h2>
+					<div class="form-group">
+						<label for="cardName">Nom sur la Carte</label>
+						<input type="text" class="form-control" id="cardName" name="cardName" required>
+					</div>
+					<div class="form-group">
+						<label for="cardNumber">Numéro de Carte</label>
+						<input type="text" class="form-control" id="cardNumber" name="cardNumber" required>
+					</div>
+					<div class="form-row">
+						<div class="form-group col-md-6">
+							<label for="expiryDate">Date d'Expiration</label>
+							<input type="text" class="form-control" id="expiryDate" name="expiryDate" placeholder="MM/AA" required>
+						</div>
+						<div class="form-group col-md-6">
+							<label for="cvv">CVV</label>
+							<input type="text" class="form-control" id="cvv" name="cvv" required>
+						</div>
+					</div>
+
+					<br>
+					<button type="submit" class="btn btn-primary">Passer Commande</button>
+				</form>
+			</div>
+
+
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		</body>
+	</html>
+{% endblock %}

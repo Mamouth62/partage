@@ -7,9 +7,21 @@
 	{{ parent() }}
 	<style>
 		body {
-			background-color: #f8f9fa;
-			color: #343a40;
-			font-family: 'Arial', sans-serif;
+			background: url('{{ asset('img/sdf.JPG') }}') no-repeat center center fixed;
+			background-size: cover;
+		}
+
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+		}
+
+		.content-wrapper {
+			background-color: rgba(255, 255, 255, 0.85);
+			padding: 20px;
+			border-radius: 10px;
+			margin-top: 20px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 		}
 		.text-center img {
 			max-width: 100%;
@@ -17,35 +29,58 @@
 			display: block;
 			margin: 0 auto;
 		}
+		.text-center-content {
+			text-align: center;
+		}
+		.img-table {
+			width: 100%;
+			table-layout: fixed;
+		}
+		.img-table td {
+			padding: 10px;
+			text-align: center;
+			vertical-align: middle;
+		}
+		.img-table img {
+			max-width: 100%;
+			height: auto;
+		}
 	</style>
 {% endblock %}
 
+
 {% block body %}
 	<div class="container mt-5">
-		<h1 class="mb-4">Comité des fêtes</h1>
-		<h5>Le rôle du comité des fêtes est d'organiser des animations pour les habitants du village (loto, chasse à l'oeuf, bal country, karaoké, soirée dansante), et les journées spéciales comme l'apéritif-concert de Juillet ou le Noël des enfants (en partenariat avec la mairie).<br><br>
-			
-			Le comité est ouvert à tous, jeunes et moins jeunes, alors si vous êtes motivés ou plein de bonnes idées, n'hésitez pas à nous rejoindre.<br><br><br>
-			 
-			Le bureau est composé comme suit :<br><br>
-			Président, Mr CHRISTOPHE LE STRAT<br>
-			Vice président Mr ERIC DUFLOT<br>
-			Trésoriére, Mme MARYSE DUBOS<br>
-			Trésoriére adjointe Mme ZINNAT EMAMBACCUS<br>
-			Secrétaire Mr FREDERIC DUBOS<br>
-			Secrétaire adjoint Mr CLAUDE LECLEIRE<br><br><br>
-			 
-			Les autres membres qui apportent leur aide précieuse :<br><br>
-			Eric DUFLOT<br>
-			Sylvie DUFLOT<br>
-			Frédéric TEMPEZ<br>
-			Philippe LETIENNE<br>
-			Martine THELLIEZ<br>
-			Isabelle LE BLANCHE<br>
-			Charlotte GRANIZO<br>
-			Pierre GRANIZO<br>
-			Michel DEFRESCHI<br>
-			Delphine WILLEMETZ<br>
-			Fabienne DUTOIT<br>
-			Agnés GOURDAIN</h5>
-	{% endblock %}
+		<div class="content-wrapper">
+			<h1 class="mb-4">Comité des fêtes</h1>
+			<h5>Le rôle du comité des fêtes est d'organiser des animations pour les habitants du village (loto, chasse à l'oeuf, bal country, karaoké, soirée dansante), et les journées spéciales comme l'apéritif-concert de Juillet ou le Noël des enfants (en partenariat avec la mairie).<br><br>
+
+				Le comité est ouvert à tous, jeunes et moins jeunes, alors si vous êtes motivés ou plein de bonnes idées, n'hésitez pas à nous rejoindre.<br><br><br>
+
+				Le bureau est composé comme suit :<br><br>
+				Président, Mr CHRISTOPHE LE STRAT<br>
+				Vice président Mr ERIC DUFLOT<br>
+				Trésoriére, Mme MARYSE DUBOS<br>
+				Trésoriére adjointe Mme ZINNAT EMAMBACCUS<br>
+				Secrétaire Mr FREDERIC DUBOS<br>
+				Secrétaire adjoint Mr CLAUDE LECLEIRE<br><br><br>
+
+				Les autres membres qui apportent leur aide précieuse :<br><br>
+				Sylvie DUFLOT<br>
+				Frédéric TEMPEZ<br>
+				Philippe LETIENNE<br>
+				Martine THELLIEZ<br>
+				Isabelle LE BLANCHE<br>
+				Charlotte GRANIZO<br>
+				Pierre GRANIZO<br>
+				Michel DEFRESCHI<br>
+				Delphine WILLEMETZ<br>
+				Fabienne DUTOIT<br>
+				Agnés GOURDAIN</h5>
+		</div>
+		<div class="container mt-5">
+			<a href="{{ path('app_vie_associative') }}" class="btn btn-dark-blue mb-4">Retour à la Page Vie Associative</a>
+			<button onclick="window.print()" class="btn btn-dark-blue mb-4">Imprimer</button>
+		</div>
+	</div>
+{% endblock %}

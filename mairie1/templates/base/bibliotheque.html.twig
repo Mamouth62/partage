@@ -1,15 +1,27 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Wancourt -
+{% block title %}Wancourt - Bibliothèque
 {% endblock %}
 
 {% block stylesheets %}
 	{{ parent() }}
 	<style>
 		body {
-			background-color: #f8f9fa;
-			color: #343a40;
-			font-family: 'Arial', sans-serif;
+			background: url('{{ asset('img/sdf.JPG') }}') no-repeat center center fixed;
+			background-size: cover;
+		}
+
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+		}
+
+		.content-wrapper {
+			background-color: rgba(255, 255, 255, 0.85);
+			padding: 20px;
+			border-radius: 10px;
+			margin-top: 20px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 		}
 		.text-center img {
 			max-width: 100%;
@@ -36,70 +48,77 @@
 	</style>
 {% endblock %}
 
+
 {% block body %}
 	<div class="container mt-5">
-		<h1 class="mb-4 text-center-content">Bibliothèque de Wancourt</h1>
-		<div class="text-center-content">
-			<h5>
-				Bibliothèque municipale
-				                Au coeur du village, la bibliothèque est située
-				                au 1er étage de la mairie, porte de droite côté boite aux lettres.<br>
-				Simone et Isabelle vous accueillent :<br>
-				Les mardis de 15h à 18h30<br>
-				Les mercredis de 14h à 18h30.<br><br>
-				Elles proposent également des ateliers créatifs (sur réservation)
-				                pour enfants et pour adultes à l'occasion des différentes fêtes :<br>
-				(Halloween, Noël, mardi gras, Pâques,
-				                fête des mères et fête des pères).<br><br>
-				Marie-Claire reçoit les élèves de l'école maternelle
-				                accompagnés de leurs enseignantes 
-				                tous les lundis matin et après-midi
-				                pour des lectures et emprunts de livres.<br><br>
-				Le réseau Petite Enfance est accueilli une fois par mois
-				                avec son animatrice Dominique pour des lectures, des comptines,
-				                prêts de livres et diverses activités.
-				                (Bébé signes, éveil musical, Kamishibaï, ateliers créatifs ou culinaires).<br><br>
-			</h5>
-			<div class="container mt-5">
-				<h1 class="mb-4 text-center">Galerie d'Images</h1>
-				<div class="table-responsive">
-					<table class="table img-table">
-						<tr>
-							{% set img1 = 'img/vue_ensemble_bibliotheque.jpg' %}
-							<td><img src="{{ asset(img1) }}" class="img-fluid" alt="Description de l'image 1"><h6>Vue d'ensemble de la bibliothèque</h6>
-							</td>
-							{% set img2 = 'img/coin_lecture.jpg' %}
-							<td><img src="{{ asset(img2) }}" class="img-fluid" alt="Description de l'image 1"><h6>Albums de jeunesse et coin lecture</h6>
-							</td>
-							{% set img3 = 'img/bd.jpg' %}
-							<td><img src="{{ asset(img3) }}" class="img-fluid" alt="Description de l'image 1"><h6>BD jeunesse</h6>
-							</td>
-						</tr>
-						<tr>
-							{% set img4 = 'img/romans_jeunesse.jpg' %}
-							<td><img src="{{ asset(img4) }}" class="img-fluid" alt="Description de l'image 1"><h6>Romans jeunesse</h6>
-							</td>
-							{% set img5 = 'img/romans_adultes.jpg' %}
-							<td><img src="{{ asset(img5) }}" class="img-fluid" alt="Description de l'image 1"><h6>Romans Adultes</h6>
-							</td>
-							{% set img6 = 'img/romans_policier.jpg' %}
-							<td><img src="{{ asset(img6) }}" class="img-fluid" alt="Description de l'image 1"><h6>Romans policier</h6>
-							</td>
-						</tr>
-					</table>
+		<div class="content-wrapper">
+			<h1 class="mb-4 text-center-content">Bibliothèque de Wancourt</h1>
+			<div class="text-center-content">
+				<h5>
+					Bibliothèque municipale<br>
+					Au coeur du village, la bibliothèque est située
+																		                au 1er étage de la mairie, porte de droite côté boite aux lettres.<br>
+					Simone et Isabelle vous accueillent :<br>
+					Les mardis de 15h à 18h30<br>
+					Les mercredis de 14h à 18h30.<br><br>
+					Elles proposent également des ateliers créatifs (sur réservation)
+																		                pour enfants et pour adultes à l'occasion des différentes fêtes :<br>
+					(Halloween, Noël, mardi gras, Pâques,
+																		                fête des mères et fête des pères).<br><br>
+					Marie-Claire reçoit les élèves de l'école maternelle
+																		                accompagnés de leurs enseignantes 
+																		                tous les lundis matin et après-midi
+																		                pour des lectures et emprunts de livres.<br><br>
+					Le réseau Petite Enfance est accueilli une fois par mois
+																		                avec son animatrice Dominique pour des lectures, des comptines,
+																		                prêts de livres et diverses activités.
+																		                (Bébé signes, éveil musical, Kamishibaï, ateliers créatifs ou culinaires).<br><br>
+				</h5>
+				<div class="container mt-5">
+					<h1 class="mb-4 text-center">Galerie d'Images</h1>
+					<div class="table-responsive">
+						<table class="table img-table">
+							<tr>
+								{% set img1 = 'img/vue_ensemble_bibliotheque.jpg' %}
+								<td><img src="{{ asset(img1) }}" class="img-fluid" alt="Description de l'image 1"><h6>Vue d'ensemble de la bibliothèque</h6>
+								</td>
+								{% set img2 = 'img/coin_lecture.jpg' %}
+								<td><img src="{{ asset(img2) }}" class="img-fluid" alt="Description de l'image 1"><h6>Albums de jeunesse et coin lecture</h6>
+								</td>
+								{% set img3 = 'img/bd.jpg' %}
+								<td><img src="{{ asset(img3) }}" class="img-fluid" alt="Description de l'image 1"><h6>BD jeunesse</h6>
+								</td>
+							</tr>
+							<tr>
+								{% set img4 = 'img/romans_jeunesse.jpg' %}
+								<td><img src="{{ asset(img4) }}" class="img-fluid" alt="Description de l'image 1"><h6>Romans jeunesse</h6>
+								</td>
+								{% set img5 = 'img/romans_adultes.jpg' %}
+								<td><img src="{{ asset(img5) }}" class="img-fluid" alt="Description de l'image 1"><h6>Romans Adultes</h6>
+								</td>
+								{% set img6 = 'img/romans_policier.jpg' %}
+								<td><img src="{{ asset(img6) }}" class="img-fluid" alt="Description de l'image 1"><h6>Romans policier</h6>
+								</td>
+							</tr>
+						</table>
+					</div>
 				</div>
+				<br><br>
+				<h5>La bibliothèque est gratuite pour tous :<br>
+					Wancourtois et extérieurs.<br><br>
+					N'hésitez pas à nous contacter :
+					<br><br>
+
+					Adresse Courriel : bibliotheque@wancourt.fr<br>
+					Site internet :<a href="https://bibliotheque.wancourt.fr">bibliotheque.wancourt.fr</a><br>
+					Facebook:<a href="https://www.facebook.com/bibliothequedeWancourt/?locale=fr_FR">
+						bibliothequedeWancourt</a><br>
+					(Mairie : 03 21 48 15 86)</h5>
 			</div>
-			<br><br><h5>La bibliothèque est gratuite pour tous :<br>
-			Wancourtois et extérieurs.<br><br>
-			N'hésitez pas à nous contacter : <br><br>
-			 
-			Mail : bibliotheque@wancourt.fr<br>
-			Site internet : bibliotheque.wancourt.fr<br>
-			Facebook: bibliothequedeWancourt<br>
-			(Mairie : 03 21 48 15 86)</h5>
+		<div class="container mt-5 d-flex justify-content-between">
+			<a href="{{ path('app_vie_associative') }}" class="btn btn-dark-blue">Retour à la Page Vie Associative</a>
+			<button onclick="window.print()" class="btn btn-dark-blue">Imprimer</button>
 		</div>
 	</div>
-	 <div class="container">
-        <a href="{{path('app_vie_associative')}}" class="btn btn-dark-blue mb-4">Retour à la page vie associative</a>
-    </div>
+	<br><br>
 {% endblock %}

@@ -1,61 +1,91 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Cartes d'identité - Wancourt
-{% endblock %}
+{% block title %}Cartes d'identité - Wancourt{% endblock %}
 
 {% block stylesheets %}
-	{{ parent() }}
-	<style>
-		body {
-			background-color: #f8f9fa;
-			color: #343a40;
-			font-family: 'Arial', sans-serif;
-		}
-		.content-section {
-			margin-top: 20px;
-		}
-		.content-section h2 {
-			margin-bottom: 15px;
-		}
-		.content-section p {
-			margin-bottom: 10px;
-		}
-	</style>
+    {{ parent() }}
+    <style>
+        body {
+            background: url('{{ asset('img/aire_jeu_sdf.JPG') }}') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .container {
+            max-width: 1500px;
+            margin: 0 auto;
+        }
+
+        .content-wrapper {
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: rgba(51, 51, 51, 0.8);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .content-section {
+            margin-top: 20px;
+        }
+
+        .content-section h2 {
+            margin-bottom: 15px;
+        }
+
+        .content-section p {
+            margin-bottom: 10px;
+        }
+
+        ol {
+            color: rgba(51, 51, 51, 0.8);
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 {% endblock %}
 
 {% block body %}
-	<div class="container mt-5">
-		<h1 class="mb-4 text-center">Cartes Nationale d'Identité</h1>
-		{% set img = 'img/carte_id.jpg' %}
-		<div class="text-center">
-			<img src="{{ asset(img) }}" class="img-fluid" style="max-width: 50%; height: auto;">
-		</div>
-		<div class="text-center mt-5">
-			<a href="https://www.service-public.fr/particuliers/vosdroits/N358" class="btn btn-dark-blue">Lien vers les Services Publiques</a>
-		</div>
-		<div class="content-section">
-			<h2>Procédure de demande de carte d'identité</h2>
-			<p>Pour obtenir une carte d'identité, vous devez suivre les étapes suivantes :</p>
-			<ol>
-				<li>Remplir le formulaire de demande en ligne sur le site officiel du gouvernement.</li>
-				<li>Prendre rendez-vous à la mairie pour déposer votre dossier.</li>
-				<li>Apporter les documents requis : une photo d'identité récente, un justificatif de domicile et votre ancienne carte d'identité si vous en avez une.</li>
-			</ol>
-		</div>
-		<div class="content-section">
-			<h2>Documents nécessaires</h2>
-			<p>Voici la liste des documents nécessaires pour faire une demande de carte d'identité :</p>
-			<ul>
-				<li>Formulaire de demande complété</li>
-				<li>Photo d'identité conforme aux normes en vigueur</li>
-				<li>Justificatif de domicile (facture d'électricité, quittance de loyer, etc.)</li>
-				<li>Ancienne carte d'identité (si renouvellement)</li>
-				<li>Acte de naissance (pour une première demande)</li>
-				<li>Document prouvant la nationalité française (si nécessaire)</li>
-			</ul>
-		</div>
-		<div class="container">
-			<a href="{{ path('app_vie_pratique') }}" class="btn btn-dark-blue mb-4">Retour à la Page Vie Pratique</a>
-		</div>
-	</div>
+    <div class="container mt-5">
+        <div class="content-wrapper">
+            <h1 class="mb-4 text-center">Carte Nationale d'Identité</h1>
+            {% set img = 'img/carte_id.jpg' %}
+            <div class="text-center">
+                <img src="{{ asset(img) }}" class="img-fluid" style="max-width: 50%; height: auto;">
+            </div>
+            <div class="text-center mt-5">
+                <a href="https://www.service-public.fr/particuliers/vosdroits/N358" class="btn btn-dark-blue">Lien vers www.service-public.fr</a>
+            </div>
+            <div class="content-section">
+                <h2>Procédure de demande de carte d'identité</h2>
+                <p>Pour obtenir une carte d'identité, vous devez suivre les étapes suivantes :</p>
+                <ol>
+                    <li>Remplir le formulaire de demande en ligne sur le site officiel du gouvernement.</li>
+                    <li>Prendre rendez-vous dans une mairie habilitée pour prendre les empreintes biométriques.</li>
+                    <li>Apporter les documents demandés.</li>
+                </ol>
+            </div>
+            <div class="text-center mt-5">
+                <a href="{{ path('app_vie_pratique') }}" class="btn btn-dark-blue mb-4">Retour à la Page Vie Pratique</a>
+            </div>
+        </div>
+    </div>
 {% endblock %}
